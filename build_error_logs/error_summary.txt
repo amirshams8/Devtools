@@ -7,6 +7,10 @@ No CMake errors
 No ninja errors
 
 -- C++ COMPILATION ERRORS --
+     ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher (aka com.jarvismini.devtools:mipmap/ic_launcher) not found.
+     ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher_round (aka com.jarvismini.devtools:mipmap/ic_launcher_round) not found.
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher (aka com.jarvismini.devtools:mipmap/ic_launcher) not found.
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher_round (aka com.jarvismini.devtools:mipmap/ic_launcher_round) not found.
 
 -- MISSING HEADERS/LIBRARIES --
 No missing deps
@@ -15,416 +19,262 @@ No missing deps
 No Kotlin/Java errors
 
 -- XML RESOURCE ERRORS --
-No XML errors
+Merging manifest with lower [androidx.databinding:viewbinding:8.2.2] AndroidManifest.xml:2:1-7:12
+Merging uses-sdk with lower [androidx.databinding:viewbinding:8.2.2] AndroidManifest.xml:5:5-44
+Merging manifest with lower [com.google.android.material:material:1.11.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [com.google.android.material:material:1.11.0] AndroidManifest.xml:20:5-44
+Merging application with lower [com.google.android.material:material:1.11.0] AndroidManifest.xml:22:5-20
+Merging manifest with lower [androidx.constraintlayout:constraintlayout:2.1.4] AndroidManifest.xml:2:1-11:12
+Merging uses-sdk with lower [androidx.constraintlayout:constraintlayout:2.1.4] AndroidManifest.xml:5:5-7:41
+Merging application with lower [androidx.constraintlayout:constraintlayout:2.1.4] AndroidManifest.xml:9:5-20
+Merging manifest with lower [androidx.appcompat:appcompat-resources:1.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.appcompat:appcompat-resources:1.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.appcompat:appcompat:1.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.appcompat:appcompat:1.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.emoji2:emoji2-views-helper:1.2.0] AndroidManifest.xml:2:1-7:12
+Merging uses-sdk with lower [androidx.emoji2:emoji2-views-helper:1.2.0] AndroidManifest.xml:5:5-44
+Merging manifest with lower [androidx.emoji2:emoji2:1.2.0] AndroidManifest.xml:17:1-35:12
+Merging uses-sdk with lower [androidx.emoji2:emoji2:1.2.0] AndroidManifest.xml:21:5-44
+Merging application with lower [androidx.emoji2:emoji2:1.2.0] AndroidManifest.xml:23:5-33:19
+Merging manifest with lower [androidx.viewpager2:viewpager2:1.0.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.viewpager2:viewpager2:1.0.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.fragment:fragment:1.3.6] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.fragment:fragment:1.3.6] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.activity:activity:1.8.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.activity:activity:1.8.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.drawerlayout:drawerlayout:1.1.1] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.drawerlayout:drawerlayout:1.1.1] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.coordinatorlayout:coordinatorlayout:1.1.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.coordinatorlayout:coordinatorlayout:1.1.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.dynamicanimation:dynamicanimation:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.dynamicanimation:dynamicanimation:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.transition:transition:1.2.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.transition:transition:1.2.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.vectordrawable:vectordrawable-animated:1.1.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.vectordrawable:vectordrawable-animated:1.1.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.vectordrawable:vectordrawable:1.1.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.vectordrawable:vectordrawable:1.1.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.viewpager:viewpager:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.viewpager:viewpager:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.legacy:legacy-support-core-utils:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.legacy:legacy-support-core-utils:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.loader:loader:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.loader:loader:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.recyclerview:recyclerview:1.1.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.recyclerview:recyclerview:1.1.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.customview:customview:1.1.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.customview:customview:1.1.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.core:core:1.12.0] AndroidManifest.xml:17:1-30:12
+Merging uses-sdk with lower [androidx.core:core:1.12.0] AndroidManifest.xml:20:5-44
+Merging application with lower [androidx.core:core:1.12.0] AndroidManifest.xml:28:5-89
+Merging manifest with lower [androidx.savedstate:savedstate:1.2.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.savedstate:savedstate:1.2.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.lifecycle:lifecycle-process:2.6.1] AndroidManifest.xml:17:1-35:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-process:2.6.1] AndroidManifest.xml:21:5-44
+Merging application with lower [androidx.lifecycle:lifecycle-process:2.6.1] AndroidManifest.xml:23:5-33:19
+Merging provider#androidx.startup.InitializationProvider with lower [androidx.lifecycle:lifecycle-process:2.6.1] AndroidManifest.xml:24:9-32:20
+Merging manifest with lower [androidx.lifecycle:lifecycle-livedata-core:2.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-livedata-core:2.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.lifecycle:lifecycle-livedata:2.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-livedata:2.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.lifecycle:lifecycle-viewmodel:2.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-viewmodel:2.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.lifecycle:lifecycle-runtime:2.6.1] AndroidManifest.xml:2:1-7:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-runtime:2.6.1] AndroidManifest.xml:5:5-44
+Merging manifest with lower [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.core:core-ktx:1.12.0] AndroidManifest.xml:2:1-7:12
+Merging uses-sdk with lower [androidx.core:core-ktx:1.12.0] AndroidManifest.xml:5:5-44
+Merging manifest with lower [androidx.annotation:annotation-experimental:1.3.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.annotation:annotation-experimental:1.3.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.cursoradapter:cursoradapter:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.cursoradapter:cursoradapter:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.cardview:cardview:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.cardview:cardview:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.interpolator:interpolator:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.interpolator:interpolator:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.versionedparcelable:versionedparcelable:1.1.1] AndroidManifest.xml:17:1-27:12
+Merging uses-sdk with lower [androidx.versionedparcelable:versionedparcelable:1.1.1] AndroidManifest.xml:20:5-22:41
+Merging application with lower [androidx.versionedparcelable:versionedparcelable:1.1.1] AndroidManifest.xml:24:5-25:19
+Merging manifest with lower [androidx.profileinstaller:profileinstaller:1.3.0] AndroidManifest.xml:17:1-55:12
+Merging uses-sdk with lower [androidx.profileinstaller:profileinstaller:1.3.0] AndroidManifest.xml:21:5-44
+Merging application with lower [androidx.profileinstaller:profileinstaller:1.3.0] AndroidManifest.xml:23:5-53:19
+Merging provider#androidx.startup.InitializationProvider with lower [androidx.profileinstaller:profileinstaller:1.3.0] AndroidManifest.xml:24:9-32:20
+Merging manifest with lower [androidx.startup:startup-runtime:1.1.1] AndroidManifest.xml:17:1-33:12
+Merging uses-sdk with lower [androidx.startup:startup-runtime:1.1.1] AndroidManifest.xml:21:5-23:41
+Merging application with lower [androidx.startup:startup-runtime:1.1.1] AndroidManifest.xml:25:5-31:19
+Merging provider#androidx.startup.InitializationProvider with lower [androidx.startup:startup-runtime:1.1.1] AndroidManifest.xml:26:9-30:34
+Merging manifest with lower [androidx.tracing:tracing:1.0.0] AndroidManifest.xml:17:1-24:12
+Merging uses-sdk with lower [androidx.tracing:tracing:1.0.0] AndroidManifest.xml:20:5-22:41
+Merging manifest with lower [androidx.arch.core:core-runtime:2.2.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.arch.core:core-runtime:2.2.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.documentfile:documentfile:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.documentfile:documentfile:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] AndroidManifest.xml:20:5-44
+Merging manifest with lower [androidx.print:print:1.0.0] AndroidManifest.xml:17:1-22:12
+Merging uses-sdk with lower [androidx.print:print:1.0.0] AndroidManifest.xml:20:5-44
+12-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:6:5-7:38
+13-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:6:22-77
+14-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:7:9-35
+15-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:8:5-9:38
+16-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:8:22-78
+17-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:9:9-35
+18-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:10:5-12:40
+18-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:11:9-66
+21-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:15:5-77
+21-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:15:22-74
+22-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:16:5-87
+22-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:16:22-84
+23-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:17:5-77
+23-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:17:22-74
+26-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:20:5-73
+26-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:20:22-70
+28-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:22:5-27:15
+31-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:24:9-46
+31-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:24:18-43
+33-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:26:9-56
+33-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:26:18-53
+36-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+37-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+38-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+40-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+40-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+42-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19
+43-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:30:9-36
+44-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:31:9-36
+45-->[androidx.core:core:1.12.0] /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+48-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:32:9-43
+49-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:34:9-41
+50-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:36:9-52
+51-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:33:9-54
+52-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:35:9-46
+53-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:38:9-46:20
+54-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:39:13-41
+55-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:40:13-36
+56-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:41:13-55
+57-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:42:13-45:29
+58-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:43:17-69
+58-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:43:25-66
+60-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:44:17-77
+60-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:44:27-74
+69-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:53:9-64:19
+70-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:54:13-55
+71-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:56:13-36
+72-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:57:13-53
+73-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:55:13-79
+74-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:58:13-60:29
+75-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:59:17-92
+75-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:59:25-89
+78-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:61:13-63:74
+79-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:62:17-60
+80-->/home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:63:17-71
+83-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+84-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+85-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+86-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+87-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+88-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+89-->[androidx.emoji2:emoji2:1.2.0] /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+90-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+91-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+92-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+103-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+113-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/runner/.gradle/caches/transforms-3/5f7ce29a25973535d221a2c1da52466d/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+     ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher (aka com.jarvismini.devtools:mipmap/ic_launcher) not found.
+     ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher_round (aka com.jarvismini.devtools:mipmap/ic_launcher_round) not found.
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher (aka com.jarvismini.devtools:mipmap/ic_launcher) not found.
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher_round (aka com.jarvismini.devtools:mipmap/ic_launcher_round) not found.
 
 -- BUILD TASK FAILURES --
-> Task :app:dataBindingMergeDependencyArtifactsDebug FAILED
+> Task :app:processDebugResources FAILED
 FAILURE: Build failed with an exception.
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-BUILD FAILED in 1m 4s
+BUILD FAILED in 3m 11s
 
 -- EXCEPTION STACK TRACES --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{331} MaxSize{400}, CacheStats{hitCount=95, missCount=333, loadSuccessCount=332, loadExceptionCount=0, totalLoadTime=63947484, evictionCount=1} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.pom]
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.pom to /home/runner/.gradle/.tmp/gradle_download15424235443683264380bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/io/netty/netty-tcnative-parent/2.0.46.Final/netty-tcnative-parent-2.0.46.Final.pom]
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-parent/2.0.46.Final/netty-tcnative-parent-2.0.46.Final.pom to /home/runner/.gradle/.tmp/gradle_download3953750615254734851bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle-settings-api/8.2.2/gradle-settings-api-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download12746925370775385349bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.2.2/gradle-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download3322532889218145717bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/builder/8.2.2/builder-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download12829919004943035830bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-model/31.2.2/lint-model-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download10480197605211351815bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/manifest-merger/31.2.2/manifest-merger-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download12591424997558314862bin
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:processDebugResources'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:148)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:146)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
 --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=442, loadSuccessCount=441, loadExceptionCount=0, totalLoadTime=126739403, evictionCount=41} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar to /home/runner/.gradle/.tmp/gradle_download8219118245364405025bin
-Downloading https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.jar to /home/runner/.gradle/.tmp/gradle_download3033364974426948919bin
-Downloading https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.7.0/jose4j-0.7.0.jar to /home/runner/.gradle/.tmp/gradle_download13669519949534590339bin
-Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar to /home/runner/.gradle/.tmp/gradle_download2390116582772804435bin
-Downloading https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar to /home/runner/.gradle/.tmp/gradle_download16704380455330804732bin
-Downloading https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar to /home/runner/.gradle/.tmp/gradle_download6157669868844424688bin
-Downloading https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.19/animal-sniffer-annotations-1.19.jar to /home/runner/.gradle/.tmp/gradle_download13708472091219277163bin
-Downloading https://repo.maven.apache.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar to /home/runner/.gradle/.tmp/gradle_download14972534157985970835bin
-Downloading https://repo.maven.apache.org/maven2/io/perfmark/perfmark-api/0.23.0/perfmark-api-0.23.0.jar to /home/runner/.gradle/.tmp/gradle_download9543692380319066349bin
+Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+	at org.gradle.workers.internal.DefaultWorkerExecutor$WorkItemExecution.waitForCompletion(DefaultWorkerExecutor.java:283)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.lambda$waitForItemsAndGatherFailures$2(DefaultAsyncWorkTracker.java:130)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:336)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:319)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLock(DefaultWorkerLeaseService.java:324)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:126)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:92)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForAll(DefaultAsyncWorkTracker.java:78)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForCompletion(DefaultAsyncWorkTracker.java:66)
 --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=482, loadSuccessCount=481, loadExceptionCount=0, totalLoadTime=132226640, evictionCount=81} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-common/4.1.72.Final/netty-common-4.1.72.Final.jar to /home/runner/.gradle/.tmp/gradle_download5796043209208522020bin
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar to /home/runner/.gradle/.tmp/gradle_download9434708253368842652bin
-=======
-BUILD FAILED in 2m 26s
-
--- EXCEPTION STACK TRACES --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{369} MaxSize{400}, CacheStats{hitCount=98, missCount=372, loadSuccessCount=370, loadExceptionCount=0, totalLoadTime=48643694, evictionCount=1} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-device-provider-ddmlib-proto/31.2.2/android-device-provider-ddmlib-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download11645402805279485539bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/databinding/databinding-common/8.2.2/databinding-common-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download18157200310883107320bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/databinding/baseLibrary/8.2.2/baseLibrary-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download10640124476302541290bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-device-provider-gradle-proto/31.2.2/android-device-provider-gradle-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download7714123990227901721bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-typedef-remover/31.2.2/lint-typedef-remover-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download366149875098483074bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-test-plugin-host-logcat-proto/31.2.2/android-test-plugin-host-logcat-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download1783528479080748361bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-test-plugin-result-listener-gradle-proto/31.2.2/android-test-plugin-result-listener-gradle-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download9950165220122882670bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-test-plugin-host-apk-installer-proto/31.2.2/android-test-plugin-host-apk-installer-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download13166820700738472662bin
-Downloading https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.jar to /home/runner/.gradle/.tmp/gradle_download18239339918778825825bin
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
 --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{397} MaxSize{400}, CacheStats{hitCount=98, missCount=440, loadSuccessCount=438, loadExceptionCount=0, totalLoadTime=53484985, evictionCount=41} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/3.0.8/istack-commons-runtime-3.0.8.jar to /home/runner/.gradle/.tmp/gradle_download4597087750062699650bin
-Downloading https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/1.2.16/FastInfoset-1.2.16.jar to /home/runner/.gradle/.tmp/gradle_download8202466819957244193bin
-Downloading https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar to /home/runner/.gradle/.tmp/gradle_download3120045042655048518bin
-Downloading https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.jar to /home/runner/.gradle/.tmp/gradle_download11917373029796718935bin
-Downloading https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar to /home/runner/.gradle/.tmp/gradle_download6095381731232356037bin
-Downloading https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.7.0/jose4j-0.7.0.jar to /home/runner/.gradle/.tmp/gradle_download5903239772825902212bin
-Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar to /home/runner/.gradle/.tmp/gradle_download15628661114770295557bin
-Downloading https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar to /home/runner/.gradle/.tmp/gradle_download14423360424447957641bin
-Downloading https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar to /home/runner/.gradle/.tmp/gradle_download1449826366720485371bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=98, missCount=483, loadSuccessCount=481, loadExceptionCount=0, totalLoadTime=55877316, evictionCount=81} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar to /home/runner/.gradle/.tmp/gradle_download15310290052610970778bin
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-resolver/4.1.72.Final/netty-resolver-4.1.72.Final.jar to /home/runner/.gradle/.tmp/gradle_download18097390230497540287bin
->>>>>>> Stashed changes
-=======
-BUILD FAILED in 2m 13s
-
--- EXCEPTION STACK TRACES --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{351} MaxSize{400}, CacheStats{hitCount=101, missCount=351, loadSuccessCount=352, loadExceptionCount=0, totalLoadTime=50624717, evictionCount=1} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/builder-model/8.2.2/builder-model-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download9454977534211181043bin
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.9.0/kotlin-stdlib-jdk8-1.9.0.jar to /home/runner/.gradle/.tmp/gradle_download8113308871315181712bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/layoutlib/layoutlib-api/31.2.2/layoutlib-api-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download7227048410325947241bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/ddms/ddmlib/31.2.2/ddmlib-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download341229505913076036bin
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/1.9.10/kotlin-reflect-1.9.10.jar to /home/runner/.gradle/.tmp/gradle_download10459984982969599071bin
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.9.0/kotlin-stdlib-jdk7-1.9.0.jar to /home/runner/.gradle/.tmp/gradle_download15113415145576997975bin
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.9.10/kotlin-stdlib-1.9.10.jar to /home/runner/.gradle/.tmp/gradle_download14795194884138991485bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/common/31.2.2/common-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download13145141387503659648bin
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar to /home/runner/.gradle/.tmp/gradle_download5199755094020870213bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{392} MaxSize{400}, CacheStats{hitCount=101, missCount=432, loadSuccessCount=433, loadExceptionCount=0, totalLoadTime=58451357, evictionCount=41} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar to /home/runner/.gradle/.tmp/gradle_download6233090057833069160bin
-Downloading https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/1.8.1/stax-ex-1.8.1.jar to /home/runner/.gradle/.tmp/gradle_download8430167218972487605bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/signflinger/8.2.2/signflinger-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download9918573881337119516bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/annotations/31.2.2/annotations-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download10001678126091693480bin
-Downloading https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar to /home/runner/.gradle/.tmp/gradle_download17797497774330378169bin
-Downloading https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/2.3.2/txw2-2.3.2.jar to /home/runner/.gradle/.tmp/gradle_download5341004514816738995bin
-Downloading https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/1.2.16/FastInfoset-1.2.16.jar to /home/runner/.gradle/.tmp/gradle_download12930851865545160749bin
-Downloading https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/3.0.8/istack-commons-runtime-3.0.8.jar to /home/runner/.gradle/.tmp/gradle_download8831073274068604199bin
-Downloading https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar to /home/runner/.gradle/.tmp/gradle_download10110140788038987823bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=101, missCount=480, loadSuccessCount=481, loadExceptionCount=0, totalLoadTime=62875131, evictionCount=81} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/io/netty/netty-tcnative-classes/2.0.46.Final/netty-tcnative-classes-2.0.46.Final.jar to /home/runner/.gradle/.tmp/gradle_download2010955656228842735bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/apksig/8.2.2/apksig-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download15059600452200967194bin
->>>>>>> Stashed changes
-=======
-BUILD FAILED in 2m 33s
-
--- EXCEPTION STACK TRACES --
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{387} MaxSize{400}, CacheStats{hitCount=98, missCount=390, loadSuccessCount=388, loadExceptionCount=0, totalLoadTime=50051038, evictionCount=1} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple/4.9/jopt-simple-4.9.jar to /home/runner/.gradle/.tmp/gradle_download10914454412513928839bin
-Downloading https://repo.maven.apache.org/maven2/com/squareup/javapoet/1.10.0/javapoet-1.10.0.jar to /home/runner/.gradle/.tmp/gradle_download8195418586328434730bin
-Downloading https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.19.3/protobuf-java-util-3.19.3.jar to /home/runner/.gradle/.tmp/gradle_download13071263585481457928bin
-Downloading https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.45.1/grpc-protobuf-1.45.1.jar to /home/runner/.gradle/.tmp/gradle_download1987893287248816439bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/apkzlib/8.2.2/apkzlib-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download7518392891581284035bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/transform-api/2.0.0-deprecated-use-gradle-api/transform-api-2.0.0-deprecated-use-gradle-api.jar to /home/runner/.gradle/.tmp/gradle_download9563359307161788970bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/utp/android-test-plugin-result-listener-gradle-proto/31.2.2/android-test-plugin-result-listener-gradle-proto-31.2.2.jar to /home/runner/.gradle/.tmp/gradle_download13384467948930323590bin
-Downloading https://repo.maven.apache.org/maven2/com/google/crypto/tink/tink/1.7.0/tink-1.7.0.jar to /home/runner/.gradle/.tmp/gradle_download13729716971762576837bin
-Downloading https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/2.0.1/proto-google-common-protos-2.0.1.jar to /home/runner/.gradle/.tmp/gradle_download3001687083793815644bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=98, missCount=443, loadSuccessCount=441, loadExceptionCount=0, totalLoadTime=56572944, evictionCount=41} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations/1.6.2/auto-value-annotations-1.6.2.jar to /home/runner/.gradle/.tmp/gradle_download1085911327401516947bin
-Downloading https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.11.0/error_prone_annotations-2.11.0.jar to /home/runner/.gradle/.tmp/gradle_download2688448416826786206bin
-Downloading https://repo.maven.apache.org/maven2/org/bitbucket/b_c/jose4j/0.7.0/jose4j-0.7.0.jar to /home/runner/.gradle/.tmp/gradle_download7643952046994400619bin
-Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar to /home/runner/.gradle/.tmp/gradle_download3924356705771999678bin
-Downloading https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar to /home/runner/.gradle/.tmp/gradle_download4730062752291372196bin
-Downloading https://dl.google.com/dl/android/maven2/com/android/zipflinger/8.2.2/zipflinger-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download2758673890950456051bin
-Downloading https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar to /home/runner/.gradle/.tmp/gradle_download8012089102675044438bin
-Downloading https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.19/animal-sniffer-annotations-1.19.jar to /home/runner/.gradle/.tmp/gradle_download3226725206717837282bin
-Downloading https://repo.maven.apache.org/maven2/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar to /home/runner/.gradle/.tmp/gradle_download7315426986133625814bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=98, missCount=483, loadSuccessCount=481, loadExceptionCount=0, totalLoadTime=59653083, evictionCount=81} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/apksig/8.2.2/apksig-8.2.2.jar to /home/runner/.gradle/.tmp/gradle_download13108911031937924685bin
->>>>>>> Stashed changes
-
-> Configure project :app
-Evaluating project ':app' using build file '/home/runner/work/Devtools/Devtools/app/build.gradle.kts'.
-Cannot use Kotlin build script compile avoidance with /home/runner/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/8.2.2/d5251ce31f2502b1ae5109ccab1b244f60b22368/gradle-8.2.2.jar: class com/android/build/gradle/internal/services/BuildServicesKt: inline fun getBuildService(): compile avoidance is not supported with public inline functions
-Cannot use Kotlin build script compile avoidance with /home/runner/.gradle/caches/modules-2/files-2.1/com.android.tools/common/31.2.2/c4bd098aab97fa95da10c4098c0238437dc1c4ef/common-31.2.2.jar: class com/android/utils/NodeCollectionHelperKt: inline fun forEach(): compile avoidance is not supported with public inline functions
-Cannot use Kotlin build script compile avoidance with /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin/1.9.22/f598600f8b407cda9d4dcd9a4d901e83af68b90f/kotlin-gradle-plugin-1.9.22-gradle82.jar: class org/jetbrains/kotlin/gradle/internal/KaptWithAndroid: inline fun androidVariantData(): compile avoidance is not supported with public inline functions
-Cannot use Kotlin build script compile avoidance with /home/runner/.gradle/caches/modules-2/files-2.1/com.android.tools.build/bundletool/1.15.2/35993207f8440e64f2c9db15a5926a85fb17e533/bundletool-1.15.2.jar: class shadow/bundletool/com/android/utils/NodeCollectionHelperKt: inline fun forEach(): compile avoidance is not supported with public inline functions
-Cannot use Kotlin build script compile avoidance with /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-gradle-plugin-idea-proto/1.9.22/f3dfa2a32c488fb0d040b377aefe544f10d4c1f/kotlin-gradle-plugin-idea-proto-1.9.22.jar: class org/jetbrains/kotlin/gradle/idea/proto/generated/IdeaExtrasProtoKt$Dsl: inline fun setValues(): compile avoidance is not supported with public inline functions
---
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=523, loadSuccessCount=521, loadExceptionCount=0, totalLoadTime=139115019, evictionCount=121} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download853933089138902704bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download15655329515774084488bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.0.0/collection-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download15411842817400719172bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.6.0/activity-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download14042077128228817382bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/cursoradapter/cursoradapter/1.0.0/cursoradapter-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download15958841658491463290bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.pom to /home/runner/.gradle/.tmp/gradle_download1092849357873867329bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.0.0/drawerlayout-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3187979695651659344bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.module to /home/runner/.gradle/.tmp/gradle_download15261023371516253055bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.6.0/activity-1.6.0.module to /home/runner/.gradle/.tmp/gradle_download4698787101184900206bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=564, loadSuccessCount=562, loadExceptionCount=0, totalLoadTime=146488477, evictionCount=162} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/resourceinspection/resourceinspection-annotation/1.0.1/resourceinspection-annotation-1.0.1.module to /home/runner/.gradle/.tmp/gradle_download4541770242448747652bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.0/savedstate-1.2.0.module to /home/runner/.gradle/.tmp/gradle_download15994722441252970072bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.pom to /home/runner/.gradle/.tmp/gradle_download3603920729522259799bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.module to /home/runner/.gradle/.tmp/gradle_download10705284893123083737bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.1.1/drawerlayout-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download9348379774985093699bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/errorprone/error_prone_annotations/2.15.0/error_prone_annotations-2.15.0.pom]
-Downloading https://dl.google.com/dl/android/maven2/androidx/cardview/cardview/1.0.0/cardview-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download12556169814509405246bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/dynamicanimation/dynamicanimation/1.0.0/dynamicanimation-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3298676981703900868bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/coordinatorlayout/coordinatorlayout/1.1.0/coordinatorlayout-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download10500656295699409991bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=604, loadSuccessCount=602, loadExceptionCount=0, totalLoadTime=149282442, evictionCount=202} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download3559000172750784733bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download10991328897518330334bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download11498164956267189573bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.0.0/concurrent-futures-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download2554763126007357200bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download15383017218842163440bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom to /home/runner/.gradle/.tmp/gradle_download3374018284630470176bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/vectordrawable/vectordrawable-animated/1.1.0/vectordrawable-animated-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download15108528806014869065bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.1.0/collection-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download1623852954363173643bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=644, loadSuccessCount=642, loadExceptionCount=0, totalLoadTime=153867085, evictionCount=242} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.5.1/lifecycle-common-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download1864784901402331964bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download14888309057671946822bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download7761430797799701805bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download1614080687361260803bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.pom to /home/runner/.gradle/.tmp/gradle_download8184557901324165975bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.module to /home/runner/.gradle/.tmp/gradle_download8228992176379750548bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.6.1/lifecycle-runtime-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download2824433350602809170bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.6.1/lifecycle-runtime-2.6.1.module to /home/runner/.gradle/.tmp/gradle_download6001951495457401674bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=684, loadSuccessCount=682, loadExceptionCount=0, totalLoadTime=157903391, evictionCount=282} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/legacy/legacy-support-core-ui/1.0.0/legacy-support-core-ui-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download8657398357744969538bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/recyclerview/recyclerview/1.1.0/recyclerview-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download3414498360796023928bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom to /home/runner/.gradle/.tmp/gradle_download12159866983306960095bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download1725978734876421862bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download8195918042492207933bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.module to /home/runner/.gradle/.tmp/gradle_download17521254729688397593bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.pom]
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=102, missCount=724, loadSuccessCount=722, loadExceptionCount=0, totalLoadTime=161172988, evictionCount=322} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download6635623397674272533bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.module to /home/runner/.gradle/.tmp/gradle_download14663182631959528974bin
-=======
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=523, loadSuccessCount=521, loadExceptionCount=0, totalLoadTime=59016132, evictionCount=121} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download12856596299614563231bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download8865378474124379515bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/cursoradapter/cursoradapter/1.0.0/cursoradapter-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download17660023900337925398bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.pom to /home/runner/.gradle/.tmp/gradle_download5864316375079008663bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.6.0/activity-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download17117627273038482586bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.0.0/collection-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13131583111532415178bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.0.0/drawerlayout-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13367926293336455152bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download16874404077815112041bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.module to /home/runner/.gradle/.tmp/gradle_download5450522888582291813bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=563, loadSuccessCount=561, loadExceptionCount=0, totalLoadTime=62501732, evictionCount=161} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/resourceinspection/resourceinspection-annotation/1.0.1/resourceinspection-annotation-1.0.1.pom to /home/runner/.gradle/.tmp/gradle_download15501579801702143223bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/resourceinspection/resourceinspection-annotation/1.0.1/resourceinspection-annotation-1.0.1.module to /home/runner/.gradle/.tmp/gradle_download16820325764788685541bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.0/savedstate-1.2.0.module to /home/runner/.gradle/.tmp/gradle_download3702613097986622181bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.pom to /home/runner/.gradle/.tmp/gradle_download9268911231853292260bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.module to /home/runner/.gradle/.tmp/gradle_download13127250918803379003bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.1.1/drawerlayout-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download158528225604512003bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/cardview/cardview/1.0.0/cardview-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3670834336262839313bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/coordinatorlayout/coordinatorlayout/1.1.0/coordinatorlayout-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download3642811119523858199bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/dynamicanimation/dynamicanimation/1.0.0/dynamicanimation-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download12634202135946722311bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=603, loadSuccessCount=601, loadExceptionCount=0, totalLoadTime=66182523, evictionCount=201} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download11759794010308173655bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download546047984173513262bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.0.0/concurrent-futures-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download4534776637701196608bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download12241223446830585052bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download2742705741461117727bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom to /home/runner/.gradle/.tmp/gradle_download12142396652775761572bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/vectordrawable/vectordrawable-animated/1.1.0/vectordrawable-animated-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download12866510794102741727bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.1.0/collection-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download17314842005108970425bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=643, loadSuccessCount=641, loadExceptionCount=0, totalLoadTime=69476800, evictionCount=241} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/arch/core/core-common/2.1.0/core-common-2.1.0.pom to /home/runner/.gradle/.tmp/gradle_download1740298894835824245bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.5.1/lifecycle-common-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download6084376750403341079bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download15110543086313400987bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download3252218648131437410bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download13786260153837102572bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.pom to /home/runner/.gradle/.tmp/gradle_download14164746704051454154bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.module to /home/runner/.gradle/.tmp/gradle_download8841622181663721814bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.6.1/lifecycle-runtime-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download12232245056528707524bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=100, missCount=683, loadSuccessCount=681, loadExceptionCount=0, totalLoadTime=73579748, evictionCount=281} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/legacy/legacy-support-core-ui/1.0.0/legacy-support-core-ui-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3124543329355303845bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/recyclerview/recyclerview/1.1.0/recyclerview-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download15393015385041862725bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13005951243067771486bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download679823449173139323bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download3781183969485646908bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.module to /home/runner/.gradle/.tmp/gradle_download15846519076591748419bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.pom]
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=101, missCount=723, loadSuccessCount=721, loadExceptionCount=0, totalLoadTime=77737525, evictionCount=321} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata/2.6.1/lifecycle-livedata-2.6.1.module to /home/runner/.gradle/.tmp/gradle_download12436794283930228784bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download18383425552163512243bin
->>>>>>> Stashed changes
-=======
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=102, missCount=520, loadSuccessCount=521, loadExceptionCount=0, totalLoadTime=67626519, evictionCount=121} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download5803307105911511797bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download1167537147018505911bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/cursoradapter/cursoradapter/1.0.0/cursoradapter-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download2242603694109259937bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.pom to /home/runner/.gradle/.tmp/gradle_download9025427431549747503bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.0.0/collection-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download16951721842272359337bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.6.0/activity-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download3841282814481499377bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download1348744819510820885bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.module to /home/runner/.gradle/.tmp/gradle_download11710137301990286799bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2-views-helper/1.2.0/emoji2-views-helper-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download17903842780236029504bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=102, missCount=560, loadSuccessCount=561, loadExceptionCount=0, totalLoadTime=71250022, evictionCount=161} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.5.1/lifecycle-runtime-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download12465821041882114299bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel/2.5.1/lifecycle-viewmodel-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download9149118943567279774bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/resourceinspection/resourceinspection-annotation/1.0.1/resourceinspection-annotation-1.0.1.module to /home/runner/.gradle/.tmp/gradle_download11683217678360876778bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.pom to /home/runner/.gradle/.tmp/gradle_download2475535754033241382bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.module to /home/runner/.gradle/.tmp/gradle_download14634885967499849838bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.1.1/drawerlayout-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download9077213004170259855bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/coordinatorlayout/coordinatorlayout/1.1.0/coordinatorlayout-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download17373997357113964245bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/errorprone/error_prone_annotations/2.15.0/error_prone_annotations-2.15.0.pom]
-Downloading https://dl.google.com/dl/android/maven2/androidx/dynamicanimation/dynamicanimation/1.0.0/dynamicanimation-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download16606425779950788652bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=103, missCount=600, loadSuccessCount=601, loadExceptionCount=0, totalLoadTime=76838151, evictionCount=201} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download13393970050810467613bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download3812953215626604013bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13099758415698257695bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download15594054788791701989bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.0.0/concurrent-futures-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13107371004766111270bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom to /home/runner/.gradle/.tmp/gradle_download15219481782279450804bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/vectordrawable/vectordrawable-animated/1.1.0/vectordrawable-animated-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download2640429049069174959bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.1.0/collection-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download13555604579766470358bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=103, missCount=640, loadSuccessCount=641, loadExceptionCount=0, totalLoadTime=80786541, evictionCount=241} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/arch/core/core-runtime/2.1.0/core-runtime-2.1.0.pom to /home/runner/.gradle/.tmp/gradle_download16006990529321198211bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.5.1/lifecycle-common-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download9642741373296169036bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download1667434036200529990bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download13754661068016881862bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download17024099553835992511bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.pom to /home/runner/.gradle/.tmp/gradle_download15246194516387211891bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.module to /home/runner/.gradle/.tmp/gradle_download4665861081124960462bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.6.1/lifecycle-runtime-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download11782844759832558220bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=103, missCount=680, loadSuccessCount=681, loadExceptionCount=0, totalLoadTime=85165074, evictionCount=281} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/legacy/legacy-support-core-ui/1.0.0/legacy-support-core-ui-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download958773478980771419bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/recyclerview/recyclerview/1.1.0/recyclerview-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download5080677126711839883bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13735106729350039168bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download14122373448832017245bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download8837901058434789461bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.module to /home/runner/.gradle/.tmp/gradle_download17801315899670033308bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.pom]
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=104, missCount=720, loadSuccessCount=721, loadExceptionCount=0, totalLoadTime=92249861, evictionCount=321} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata/2.6.1/lifecycle-livedata-2.6.1.module to /home/runner/.gradle/.tmp/gradle_download13112233592377186303bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download11137228606519180740bin
->>>>>>> Stashed changes
-=======
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=98, missCount=524, loadSuccessCount=521, loadExceptionCount=0, totalLoadTime=63463298, evictionCount=121} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download8702923285351700875bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation/1.3.0/annotation-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download14295684060989068782bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/cursoradapter/cursoradapter/1.0.0/cursoradapter-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download12898570120254285522bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.0.0/collection-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download9225073076973384758bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.pom to /home/runner/.gradle/.tmp/gradle_download14456198699143022836bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.6.0/activity-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download10189706751574881122bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/emoji2/emoji2/1.2.0/emoji2-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download1853088367219643550bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.0.0/drawerlayout-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download4880241891516347800bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/appcompat/appcompat-resources/1.6.1/appcompat-resources-1.6.1.module to /home/runner/.gradle/.tmp/gradle_download11711506346046199542bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=98, missCount=564, loadSuccessCount=561, loadExceptionCount=0, totalLoadTime=67030740, evictionCount=161} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel/2.5.1/lifecycle-viewmodel-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download17919787308239672247bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/resourceinspection/resourceinspection-annotation/1.0.1/resourceinspection-annotation-1.0.1.module to /home/runner/.gradle/.tmp/gradle_download2406419278691975914bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/savedstate/savedstate/1.2.0/savedstate-1.2.0.module to /home/runner/.gradle/.tmp/gradle_download2292762385807086654bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.pom to /home/runner/.gradle/.tmp/gradle_download5210938466014495669bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/activity/activity/1.8.0/activity-1.8.0.module to /home/runner/.gradle/.tmp/gradle_download9522242198626140033bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/drawerlayout/drawerlayout/1.1.1/drawerlayout-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download4689759955017670305bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/coordinatorlayout/coordinatorlayout/1.1.0/coordinatorlayout-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download14764976139293958995bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/dynamicanimation/dynamicanimation/1.0.0/dynamicanimation-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download7115436618618559687bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/errorprone/error_prone_annotations/2.15.0/error_prone_annotations-2.15.0.pom]
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=604, loadSuccessCount=601, loadExceptionCount=0, totalLoadTime=71089626, evictionCount=201} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.pom to /home/runner/.gradle/.tmp/gradle_download799422621940735714bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-experimental/1.3.0/annotation-experimental-1.3.0.module to /home/runner/.gradle/.tmp/gradle_download1200561225140154781bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/concurrent/concurrent-futures/1.0.0/concurrent-futures-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download14752964413517823174bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/versionedparcelable/versionedparcelable/1.1.1/versionedparcelable-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download8635089050318746284bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/interpolator/interpolator/1.0.0/interpolator-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download13582364403708115537bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.20/kotlin-stdlib-jdk8-1.8.20.pom to /home/runner/.gradle/.tmp/gradle_download16408108806458416468bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/vectordrawable/vectordrawable-animated/1.1.0/vectordrawable-animated-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download7927203054084301135bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/collection/collection/1.1.0/collection-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download3666665050340173637bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=644, loadSuccessCount=641, loadExceptionCount=0, totalLoadTime=74591925, evictionCount=241} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/arch/core/core-common/2.1.0/core-common-2.1.0.pom to /home/runner/.gradle/.tmp/gradle_download6980722901782195749bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.5.1/lifecycle-common-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download12951163282554084832bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.pom to /home/runner/.gradle/.tmp/gradle_download17145730273145411544bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-viewmodel-savedstate/2.5.1/lifecycle-viewmodel-savedstate-2.5.1.module to /home/runner/.gradle/.tmp/gradle_download2127451671344601959bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.22/kotlin-stdlib-jdk8-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download990405859338781877bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.pom to /home/runner/.gradle/.tmp/gradle_download15004483723856289913bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-common/2.4.0/lifecycle-common-2.4.0.module to /home/runner/.gradle/.tmp/gradle_download15261669700318304139bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-runtime/2.6.1/lifecycle-runtime-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download8071333808702280716bin
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=99, missCount=684, loadSuccessCount=681, loadExceptionCount=0, totalLoadTime=78680471, evictionCount=281} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/legacy/legacy-support-core-ui/1.0.0/legacy-support-core-ui-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download17955500364841371935bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/recyclerview/recyclerview/1.1.0/recyclerview-1.1.0.pom to /home/runner/.gradle/.tmp/gradle_download1754195212568933192bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/annotations/23.0.0/annotations-23.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3632400985106505284bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom]
-Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.22/kotlin-stdlib-common-1.8.22.pom to /home/runner/.gradle/.tmp/gradle_download2702851941787094051bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.pom to /home/runner/.gradle/.tmp/gradle_download1819415434222025389bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/annotation/annotation-jvm/1.6.0/annotation-jvm-1.6.0.module to /home/runner/.gradle/.tmp/gradle_download179084938659129368bin
-Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/com/google/guava/listenablefuture/1.0/listenablefuture-1.0.pom]
---
-Cache entries evicted. In-memory cache of /home/runner/work/Devtools/Devtools/.gradle/8.4/checksums/sha1-checksums.bin: Size{400} MaxSize{400}, CacheStats{hitCount=101, missCount=724, loadSuccessCount=721, loadExceptionCount=0, totalLoadTime=82757701, evictionCount=321} 
-Performance may suffer from in-memory cache misses. Increase max heap size of Gradle build process to reduce cache misses.
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.pom to /home/runner/.gradle/.tmp/gradle_download3161614292181945042bin
-Downloading https://dl.google.com/dl/android/maven2/androidx/lifecycle/lifecycle-livedata-core/2.6.1/lifecycle-livedata-core-2.6.1.module to /home/runner/.gradle/.tmp/gradle_download5259321938394662359bin
->>>>>>> Stashed changes
+Caused by: com.android.builder.internal.aapt.v2.Aapt2Exception: Android resource linking failed
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher (aka com.jarvismini.devtools:mipmap/ic_launcher) not found.
+    
+ERROR: /home/runner/work/Devtools/Devtools/app/src/main/AndroidManifest.xml:29:5-66:19: AAPT: error: resource mipmap/ic_launcher_round (aka com.jarvismini.devtools:mipmap/ic_launcher_round) not found.
+    
+	at com.android.builder.internal.aapt.v2.Aapt2Exception$Companion.create(Aapt2Exception.kt:45)
+	at com.android.builder.internal.aapt.v2.Aapt2Exception$Companion.create$default(Aapt2Exception.kt:33)
+	at com.android.build.gradle.internal.res.Aapt2ErrorUtils.rewriteException(Aapt2ErrorUtils.kt:262)
+	at com.android.build.gradle.internal.res.Aapt2ErrorUtils.rewriteLinkException(Aapt2ErrorUtils.kt:133)
+	at com.android.build.gradle.internal.res.Aapt2ProcessResourcesRunnableKt.processResources(Aapt2ProcessResourcesRunnable.kt:76)
+	at com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$Companion.invokeAaptForSplit(LinkApplicationAndroidResourcesTask.kt:940)
+	at com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$Companion.access$invokeAaptForSplit(LinkApplicationAndroidResourcesTask.kt:795)
+	at com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction.run(LinkApplicationAndroidResourcesTask.kt:431)
+	at com.android.build.gradle.internal.profile.ProfileAwareWorkAction.execute(ProfileAwareWorkAction.kt:74)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
 
 -- NATIVE BUILD LOG (last 100 lines) --
