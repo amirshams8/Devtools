@@ -208,7 +208,6 @@ import android.provider.Settings
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
-import android.view.accessibility.AccessibilityManager
 import androidx.appcompat.app.AppCompatActivity
 import com.jarvismini.devtools.autobuild.AutoBuildService
 import com.jarvismini.devtools.autobuild.models.AutoBuildState
@@ -221,8 +220,8 @@ import com.jarvismini.devtools.databinding.ActivityMainBinding
  * programmatically. The Start button opens Accessibility Settings so the user
  * can toggle it once. After that the service self-manages via the loop.
  *
- * Status updates are received via AutoBuildService.statusCallback, which is
- * a simple static lambda set here and cleared in onDestroy.
+ * Status updates are received via AutoBuildService.onStatusUpdate, which is
+ * a static lambda set here and cleared in onDestroy.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -258,8 +257,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
         }
 
-        // "Stop" = disable the service (only possible from Accessibility Settings too,
-        // but we can disableService on API 24+ via AccessibilityServiceInfo)
         binding.btnStop.setOnClickListener {
             AutoBuildService.requestStop()
             appendLog("Stop requested by user.", Color.YELLOW)
@@ -290,6 +287,16 @@ class MainActivity : AppCompatActivity() {
             binding.tvAccessibilityHint.visibility = android.view.View.GONE
             binding.btnStart.isEnabled = false
             binding.btnStop.isEnabled = true
+
+            // If the loop is already running (e.g. we returned from another app),
+            // immediately sync the dot and status text from the live state snapshot
+            // rather than leaving them at the layout default ("Idle — enable service…").
+            if (AutoBuildService.isLoopRunning) {
+                updateStatus(
+                    AutoBuildService.currentIteration,
+                    AutoBuildService.currentState
+                )
+            }
         } else {
             binding.tvAccessibilityHint.visibility = android.view.View.VISIBLE
             binding.btnStart.isEnabled = true
@@ -319,7 +326,6 @@ class MainActivity : AppCompatActivity() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         binding.tvLog.text = logBuilder
-        // Auto-scroll to bottom
         binding.scrollLog.post {
             binding.scrollLog.fullScroll(android.view.View.FOCUS_DOWN)
         }
@@ -412,6 +418,16 @@ class AutoBuildService : AccessibilityService() {
         /** Weak reference to the running service instance for stop requests. */
         private var instance: AutoBuildService? = null
 
+        /**
+         * Live state snapshot — updated on every loop iteration so MainActivity
+         * can display the correct status when it resumes after being in the background.
+         */
+        @Volatile var currentState: AutoBuildState = AutoBuildState.IDLE
+        @Volatile var currentIteration: Int = 0
+
+        /** True only while the loop coroutine is actively running. */
+        val isLoopRunning: Boolean get() = instance?.loopJob?.isActive == true
+
         fun requestStop() {
             instance?.orchestrator?.requestStop()
             Log.d(TAG, "Stop requested")
@@ -431,6 +447,15 @@ class AutoBuildService : AccessibilityService() {
         uiWatcher    = UIWatcherModule(this)
         orchestrator = OrchestrationController(this, uiWatcher)
         notifier     = BuildNotifier(this)
+
+        // Reset snapshot so stale state from a previous session isn't shown
+        currentState     = AutoBuildState.IDLE
+        currentIteration = 0
+
+        // Clear the crash-recovery checkpoint so the loop always starts fresh
+        // from WAITING_FOR_RESPONSE rather than resuming from a stale state like
+        // WAITING_FOR_BUILD (which would poll forever for a flag that never arrives).
+        FileManagerModule().clearCheckpoint()
 
         // Run as foreground service to survive long builds
         startForeground(
@@ -466,6 +491,8 @@ class AutoBuildService : AccessibilityService() {
     override fun onUnbind(intent: Intent?): Boolean {
         instance = null
         loopJob?.cancel()
+        currentState     = AutoBuildState.IDLE
+        currentIteration = 0
         stopForeground(Service.STOP_FOREGROUND_REMOVE)
         return super.onUnbind(intent)
     }
@@ -635,6 +662,22 @@ class FileManagerModule {
         LOG_DIR.listFiles()?.forEach { it.delete() }
         LOG_DIR.mkdirs()
         Log.d(TAG, "build_error_logs/ cleared (fingerprint preserved)")
+    }
+
+    /**
+     * Deletes the crash-recovery checkpoint so the loop always starts fresh
+     * from WAITING_FOR_RESPONSE on the next service connect, rather than
+     * resuming from a stale mid-build state (e.g. WAITING_FOR_BUILD) that
+     * would poll forever for a flag that will never arrive.
+     *
+     * Called by AutoBuildService.onServiceConnected().
+     */
+    fun clearCheckpoint() {
+        if (LOOP_STATE_FILE.delete()) {
+            Log.d(TAG, "loop_state.json cleared — loop will start fresh")
+        }
+        // Also clear the build_complete flag so pollForCompletion starts clean
+        TermuxBridgeModule.COMPLETE_FLAG.delete()
     }
 
     // ── Error fingerprint ─────────────────────────────────────────────────────
@@ -875,6 +918,11 @@ class OrchestrationController(
                     AutoBuildState.WAITING_FOR_RESPONSE
                 }
             }
+
+            // Update static snapshot BEFORE invoking the UI callback so that
+            // if MainActivity resumes during this exact window it sees the new state.
+            AutoBuildService.currentState     = state
+            AutoBuildService.currentIteration = iteration
 
             notifier.update(iteration, state)
             AutoBuildService.onStatusUpdate?.invoke(iteration, state)
