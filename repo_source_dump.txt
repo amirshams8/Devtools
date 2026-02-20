@@ -1638,11 +1638,6 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Install NDK and CMake
-        run: |
-          echo "y" | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "ndk;26.1.10909125"
-          echo "y" | ${ANDROID_HOME}/cmdline-tools/latest/bin/sdkmanager "cmake;3.22.1"
-
       - name: Cache Gradle
         uses: actions/cache@v4
         with:
