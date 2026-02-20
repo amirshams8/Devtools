@@ -1,3 +1,136 @@
 ==== SOURCE CODE (ERROR FILES WITH HIGHLIGHTED LINES) ====
 
-No error files detected
+//===== FILE: activity_main.xml (NOT FOUND) =====
+// Expected at: /home/runner/work/Devtools/Devtools/activity_main.xml
+
+//===== FILE: app/src/main/res/layout/activity_main.xml =====
+
+// ❌ ERRORS IN THIS FILE (2 error(s)):
+// Line 10: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+// Line 10: Resource and asset merger: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+
+   1    <?xml version="1.0" encoding="utf-8"?>
+   2    <LinearLayout
+   3        xmlns:android="http://schemas.android.com/apk/res/android"
+   4        android:layout_width="match_parent"
+   5        android:layout_height="match_parent"
+   6        android:orientation="vertical"
+   7        android:padding="24dp"
+   8        android:background="?android:attr/colorBackground"
+   9    
+  10 ❌     <!-- Title -->
+  11        <TextView
+  12            android:layout_width="match_parent"
+  13            android:layout_height="wrap_content"
+  14            android:text="AutoBuild Loop"
+  15            android:textSize="22sp"
+  16            android:textStyle="bold"
+  17            android:textColor="?attr/colorOnBackground"
+  18            android:paddingBottom="8dp" />
+  19    
+  20        <!-- Accessibility service hint -->
+  21        <TextView
+  22            android:id="@+id/tvAccessibilityHint"
+  23            android:layout_width="match_parent"
+  24            android:layout_height="wrap_content"
+  25            android:text="⚠ AutoBuild Service not enabled"
+  26            android:textSize="13sp"
+  27            android:textColor="@color/red_error"
+  28            android:paddingBottom="16dp"
+  29            android:visibility="gone" />
+  30    
+  31        <!-- Status dot + label -->
+  32        <LinearLayout
+  33            android:layout_width="match_parent"
+  34            android:layout_height="wrap_content"
+  35            android:orientation="horizontal"
+  36            android:gravity="center_vertical"
+  37            android:paddingBottom="12dp">
+  38    
+  39            <View
+  40                android:id="@+id/statusDot"
+  41                android:layout_width="14dp"
+  42                android:layout_height="14dp"
+  43                android:background="@drawable/circle_dot"
+  44                android:backgroundTint="@color/grey_idle" />
+  45    
+  46            <TextView
+  47                android:id="@+id/tvStatus"
+  48                android:layout_width="0dp"
+  49                android:layout_height="wrap_content"
+  50                android:layout_weight="1"
+  51                android:text="@string/status_idle"
+  52                android:textSize="14sp"
+  53                android:textColor="?attr/colorOnBackground"
+  54                android:paddingStart="10dp" />
+  55    
+  56            <!-- Iteration counter -->
+  57            <TextView
+  58                android:id="@+id/tvIteration"
+  59                android:layout_width="wrap_content"
+  60                android:layout_height="wrap_content"
+  61                android:text="Iter: 0"
+  62                android:textSize="13sp"
+  63                android:textColor="?attr/colorOnBackground" />
+  64    
+  65        </LinearLayout>
+  66    
+  67        <!-- Scrollable log area -->
+  68        <ScrollView
+  69            android:id="@+id/scrollLog"
+  70            android:layout_width="match_parent"
+  71            android:layout_height="0dp"
+  72            android:layout_weight="1"
+  73            android:background="#1A000000"
+  74            android:padding="8dp">
+  75    
+  76            <TextView
+  77                android:id="@+id/tvLog"
+  78                android:layout_width="match_parent"
+  79                android:layout_height="wrap_content"
+  80                android:fontFamily="monospace"
+  81                android:textSize="11sp"
+  82                android:textColor="?attr/colorOnBackground"
+  83                android:lineSpacingMultiplier="1.3" />
+  84    
+  85        </ScrollView>
+  86    
+  87        <!-- Buttons row -->
+  88        <LinearLayout
+  89            android:layout_width="match_parent"
+  90            android:layout_height="wrap_content"
+  91            android:orientation="horizontal"
+  92            android:paddingTop="16dp"
+  93            android:gravity="center">
+  94    
+  95            <Button
+  96                android:id="@+id/btnStart"
+  97                android:layout_width="0dp"
+  98                android:layout_height="wrap_content"
+  99                android:layout_weight="1"
+ 100                android:layout_marginEnd="8dp"
+ 101                android:text="@string/btn_start" />
+ 102    
+ 103            <Button
+ 104                android:id="@+id/btnStop"
+ 105                android:layout_width="0dp"
+ 106                android:layout_height="wrap_content"
+ 107                android:layout_weight="1"
+ 108                android:layout_marginStart="8dp"
+ 109                android:text="@string/btn_stop"
+ 110                android:enabled="false" />
+ 111    
+ 112        </LinearLayout>
+ 113    
+ 114        <!-- Open Accessibility Settings shortcut -->
+ 115        <Button
+ 116            android:id="@+id/btnAccessibility"
+ 117            android:layout_width="match_parent"
+ 118            android:layout_height="wrap_content"
+ 119            android:layout_marginTop="8dp"
+ 120            android:text="@string/open_accessibility"
+ 121            style="@style/Widget.Material3.Button.OutlinedButton" />
+ 122    
+ 123    </LinearLayout>
+
+
