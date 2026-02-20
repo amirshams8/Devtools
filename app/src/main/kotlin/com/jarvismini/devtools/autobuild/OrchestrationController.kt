@@ -182,6 +182,11 @@ class OrchestrationController(
                 }
             }
 
+            // Update static snapshot BEFORE invoking the UI callback so that
+            // if MainActivity resumes during this exact window it sees the new state.
+            AutoBuildService.currentState     = state
+            AutoBuildService.currentIteration = iteration
+
             notifier.update(iteration, state)
             AutoBuildService.onStatusUpdate?.invoke(iteration, state)
             delay(BETWEEN_ITER_DELAY_MS)

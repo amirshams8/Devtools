@@ -83,6 +83,22 @@ class FileManagerModule {
         Log.d(TAG, "build_error_logs/ cleared (fingerprint preserved)")
     }
 
+    /**
+     * Deletes the crash-recovery checkpoint so the loop always starts fresh
+     * from WAITING_FOR_RESPONSE on the next service connect, rather than
+     * resuming from a stale mid-build state (e.g. WAITING_FOR_BUILD) that
+     * would poll forever for a flag that will never arrive.
+     *
+     * Called by AutoBuildService.onServiceConnected().
+     */
+    fun clearCheckpoint() {
+        if (LOOP_STATE_FILE.delete()) {
+            Log.d(TAG, "loop_state.json cleared — loop will start fresh")
+        }
+        // Also clear the build_complete flag so pollForCompletion starts clean
+        TermuxBridgeModule.COMPLETE_FLAG.delete()
+    }
+
     // ── Error fingerprint ─────────────────────────────────────────────────────
 
     fun computeErrorFingerprint(iteration: Int): ErrorFingerprint {

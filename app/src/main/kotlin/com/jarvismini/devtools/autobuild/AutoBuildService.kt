@@ -37,6 +37,16 @@ class AutoBuildService : AccessibilityService() {
         /** Weak reference to the running service instance for stop requests. */
         private var instance: AutoBuildService? = null
 
+        /**
+         * Live state snapshot — updated on every loop iteration so MainActivity
+         * can display the correct status when it resumes after being in the background.
+         */
+        @Volatile var currentState: AutoBuildState = AutoBuildState.IDLE
+        @Volatile var currentIteration: Int = 0
+
+        /** True only while the loop coroutine is actively running. */
+        val isLoopRunning: Boolean get() = instance?.loopJob?.isActive == true
+
         fun requestStop() {
             instance?.orchestrator?.requestStop()
             Log.d(TAG, "Stop requested")
@@ -56,6 +66,15 @@ class AutoBuildService : AccessibilityService() {
         uiWatcher    = UIWatcherModule(this)
         orchestrator = OrchestrationController(this, uiWatcher)
         notifier     = BuildNotifier(this)
+
+        // Reset snapshot so stale state from a previous session isn't shown
+        currentState     = AutoBuildState.IDLE
+        currentIteration = 0
+
+        // Clear the crash-recovery checkpoint so the loop always starts fresh
+        // from WAITING_FOR_RESPONSE rather than resuming from a stale state like
+        // WAITING_FOR_BUILD (which would poll forever for a flag that never arrives).
+        FileManagerModule().clearCheckpoint()
 
         // Run as foreground service to survive long builds
         startForeground(
@@ -91,6 +110,8 @@ class AutoBuildService : AccessibilityService() {
     override fun onUnbind(intent: Intent?): Boolean {
         instance = null
         loopJob?.cancel()
+        currentState     = AutoBuildState.IDLE
+        currentIteration = 0
         stopForeground(Service.STOP_FOREGROUND_REMOVE)
         return super.onUnbind(intent)
     }

@@ -7,7 +7,6 @@ import android.provider.Settings
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
-import android.view.accessibility.AccessibilityManager
 import androidx.appcompat.app.AppCompatActivity
 import com.jarvismini.devtools.autobuild.AutoBuildService
 import com.jarvismini.devtools.autobuild.models.AutoBuildState
@@ -20,8 +19,8 @@ import com.jarvismini.devtools.databinding.ActivityMainBinding
  * programmatically. The Start button opens Accessibility Settings so the user
  * can toggle it once. After that the service self-manages via the loop.
  *
- * Status updates are received via AutoBuildService.statusCallback, which is
- * a simple static lambda set here and cleared in onDestroy.
+ * Status updates are received via AutoBuildService.onStatusUpdate, which is
+ * a static lambda set here and cleared in onDestroy.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -57,8 +56,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
         }
 
-        // "Stop" = disable the service (only possible from Accessibility Settings too,
-        // but we can disableService on API 24+ via AccessibilityServiceInfo)
         binding.btnStop.setOnClickListener {
             AutoBuildService.requestStop()
             appendLog("Stop requested by user.", Color.YELLOW)
@@ -89,6 +86,16 @@ class MainActivity : AppCompatActivity() {
             binding.tvAccessibilityHint.visibility = android.view.View.GONE
             binding.btnStart.isEnabled = false
             binding.btnStop.isEnabled = true
+
+            // If the loop is already running (e.g. we returned from another app),
+            // immediately sync the dot and status text from the live state snapshot
+            // rather than leaving them at the layout default ("Idle — enable service…").
+            if (AutoBuildService.isLoopRunning) {
+                updateStatus(
+                    AutoBuildService.currentIteration,
+                    AutoBuildService.currentState
+                )
+            }
         } else {
             binding.tvAccessibilityHint.visibility = android.view.View.VISIBLE
             binding.btnStart.isEnabled = true
@@ -118,7 +125,6 @@ class MainActivity : AppCompatActivity() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         binding.tvLog.text = logBuilder
-        // Auto-scroll to bottom
         binding.scrollLog.post {
             binding.scrollLog.fullScroll(android.view.View.FOCUS_DOWN)
         }
