@@ -326,13 +326,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isAccessibilityServiceEnabled(): Boolean {
-        val am = getSystemService(AccessibilityManager::class.java)
         val enabledServices = Settings.Secure.getString(
             contentResolver,
             Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
         ) ?: return false
-        val component = "${packageName}/.autobuild.AutoBuildService"
-        return enabledServices.split(":").any { it.equals(component, ignoreCase = true) }
+
+        // Android may store either the short form   "com.pkg/.Service"
+        // or the fully-qualified form               "com.pkg/com.pkg.path.Service"
+        // and may pad entries with whitespace. Match both to be safe.
+        val shortComponent = "${packageName}/.autobuild.AutoBuildService"
+        val fullComponent  = "${packageName}/com.jarvismini.devtools.autobuild.AutoBuildService"
+
+        return enabledServices.split(":").any { entry ->
+            val trimmed = entry.trim()
+            trimmed.equals(shortComponent, ignoreCase = true) ||
+            trimmed.equals(fullComponent,  ignoreCase = true)
+        }
     }
 
     // ── State display helpers ─────────────────────────────────────────────────
