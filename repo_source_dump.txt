@@ -74,6 +74,7 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        dataBinding = false   // must be explicit — Material Components can trigger this transitively
     }
 
     compileOptions {
@@ -1506,7 +1507,7 @@ data class LoopState(
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/open_accessibility"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        style="@style/Widget.Material3.Button.OutlinedButton" />
 
 </LinearLayout>
 
@@ -1537,7 +1538,7 @@ data class LoopState(
 //===== FILE: app/src/main/res/values/themes.xml =====
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.DevTools" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.DevTools" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">#FF1565C0</item>
         <item name="colorPrimaryVariant">#FF003C8F</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -1571,7 +1572,7 @@ data class LoopState(
 //===== FILE: gradle/wrapper/gradle-wrapper.properties =====
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-all.zip
 networkTimeout=10000
 validateDistributionUrl=true
 zipStoreBase=GRADLE_USER_HOME
