@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.DevTools" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.DevTools" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">#FF1565C0</item>
         <item name="colorPrimaryVariant">#FF003C8F</item>
         <item name="colorOnPrimary">@color/white</item>

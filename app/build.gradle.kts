@@ -18,6 +18,7 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        dataBinding = false   // must be explicit — Material Components can trigger this transitively
     }
 
     compileOptions {
