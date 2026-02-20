@@ -1,0 +1,16 @@
+package com.jarvismini.devtools.autobuild.models
+
+enum class AutoBuildState {
+    IDLE,
+    WAITING_FOR_RESPONSE,
+    EXTRACTING_CODE,
+    WRITING_OUTPUT,
+    TRIGGERING_BUILD,
+    WAITING_FOR_BUILD,
+    CHECKING_ERROR_FRESHNESS,
+    READING_ERROR_LOGS,
+    ATTACHING_FILES,
+    SUBMITTING_PROMPT,
+    BUILD_SUCCEEDED,
+    TIMEOUT_ERROR
+}

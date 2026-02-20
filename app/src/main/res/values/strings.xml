@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DevTools</string>
+    <string name="autobuild_service_desc">Reads Claude code responses and drives the CI build loop automatically.</string>
+    <string name="btn_start">Start AutoBuild</string>
+    <string name="btn_stop">Stop AutoBuild</string>
+    <string name="status_idle">Idle — enable service in Accessibility Settings</string>
+    <string name="status_running">Running…</string>
+    <string name="open_accessibility">Open Accessibility Settings</string>
+</resources>
