@@ -6,8 +6,8 @@
 //===== FILE: app/src/main/res/layout/activity_main.xml =====
 
 // ❌ ERRORS IN THIS FILE (2 error(s)):
-// Line 10: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
-// Line 10: Resource and asset merger: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+// Line 11: Error: The markup in the document following the root element must be well-formed.
+// Line 11: Resource and asset merger: The markup in the document following the root element must be well-formed.
 
    1    <?xml version="1.0" encoding="utf-8"?>
    2    <LinearLayout
@@ -16,10 +16,10 @@
    5        android:layout_height="match_parent"
    6        android:orientation="vertical"
    7        android:padding="24dp"
-   8        android:background="?android:attr/colorBackground"
+   8        android:background="?android:attr/colorBackground"/>
    9    
-  10 ❌     <!-- Title -->
-  11        <TextView
+  10        <!-- Title -->
+  11 ❌     <TextView
   12            android:layout_width="match_parent"
   13            android:layout_height="wrap_content"
   14            android:text="AutoBuild Loop"
