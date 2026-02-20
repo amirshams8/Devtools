@@ -31,7 +31,11 @@ Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_
 -- BUILD TASK FAILURES --
 > Task :app:packageDebugResources FAILED
 > Task :app:mergeDebugResources FAILED
+<<<<<<< Updated upstream
 BUILD FAILED in 2m 38s
+=======
+BUILD FAILED in 2m 46s
+>>>>>>> Stashed changes
 
 -- EXCEPTION STACK TRACES --
     org.xml.sax.SAXParseException; systemId: file:/home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml; lineNumber: 10; columnNumber: 5; Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
@@ -130,7 +134,11 @@ Caused by: com.android.build.gradle.tasks.ResourceException: /home/runner/work/D
 --
 	at com.android.ide.common.resources.MergingException$Builder.build(MergingException.java:152)
 	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:304)
+<<<<<<< Updated upstream
 	... 132 more
+=======
+	... 162 more
+>>>>>>> Stashed changes
 Caused by: org.xml.sax.SAXParseException; systemId: file:/home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml; lineNumber: 10; columnNumber: 5; Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
 	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
 	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)

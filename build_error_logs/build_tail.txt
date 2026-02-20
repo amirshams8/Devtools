@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Transforming lifecycle-livedata-core-2.6.1.aar (androidx.lifecycle:lifecycle-livedata-core:2.6.1) with AarTransform
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/2a79237028878ecf82651907de158179/transformed/constraintlayout-2.1.4 because:
   Build cache is disabled
@@ -13,6 +14,63 @@ Transforming lifecycle-runtime-2.6.1.aar (androidx.lifecycle:lifecycle-runtime:2
 Transforming lifecycle-runtime-2.6.1.aar (androidx.lifecycle:lifecycle-runtime:2.6.1) with AarTransform
 Transforming lifecycle-viewmodel-savedstate-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1) with ExtractAarTransform
 Transforming lifecycle-viewmodel-savedstate-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1) with AarTransform
+=======
+Transforming recyclerview-1.1.0.aar (androidx.recyclerview:recyclerview:1.1.0) with AarTransform
+Transforming recyclerview-1.1.0.aar (androidx.recyclerview:recyclerview:1.1.0) with ExtractAarTransform
+Transforming recyclerview-1.1.0.aar (androidx.recyclerview:recyclerview:1.1.0) with AarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with ExtractAarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with AarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with ExtractAarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with AarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with ExtractAarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with AarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with ExtractAarTransform
+Transforming customview-1.1.0.aar (androidx.customview:customview:1.1.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with ExtractAarTransform
+Transforming core-1.12.0.aar (androidx.core:core:1.12.0) with AarTransform
+Transforming savedstate-1.2.1.aar (androidx.savedstate:savedstate:1.2.1) with ExtractAarTransform
+Transforming savedstate-1.2.1.aar (androidx.savedstate:savedstate:1.2.1) with AarTransform
+Transforming lifecycle-process-2.6.1.aar (androidx.lifecycle:lifecycle-process:2.6.1) with ExtractAarTransform
+Transforming lifecycle-process-2.6.1.aar (androidx.lifecycle:lifecycle-process:2.6.1) with AarTransform
+Transforming lifecycle-livedata-core-2.6.1.aar (androidx.lifecycle:lifecycle-livedata-core:2.6.1) with ExtractAarTransform
+Transforming lifecycle-livedata-core-2.6.1.aar (androidx.lifecycle:lifecycle-livedata-core:2.6.1) with AarTransform
+Transforming lifecycle-livedata-2.6.1.aar (androidx.lifecycle:lifecycle-livedata:2.6.1) with ExtractAarTransform
+Transforming lifecycle-livedata-2.6.1.aar (androidx.lifecycle:lifecycle-livedata:2.6.1) with AarTransform
+Transforming lifecycle-viewmodel-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel:2.6.1) with ExtractAarTransform
+Transforming lifecycle-viewmodel-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel:2.6.1) with AarTransform
+Transforming lifecycle-viewmodel-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel:2.6.1) with ExtractAarTransform
+Transforming lifecycle-viewmodel-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel:2.6.1) with AarTransform
+Transforming lifecycle-runtime-2.6.1.aar (androidx.lifecycle:lifecycle-runtime:2.6.1) with ExtractAarTransform
+Transforming lifecycle-runtime-2.6.1.aar (androidx.lifecycle:lifecycle-runtime:2.6.1) with AarTransform
+Transforming lifecycle-viewmodel-savedstate-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1) with ExtractAarTransform
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/fdf7cb61aa48a697a9df8fc1913e04bc/transformed/appcompat-resources-1.6.1 because:
+  Build cache is disabled
+Transforming lifecycle-viewmodel-savedstate-2.6.1.aar (androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1) with AarTransform
+AarTransform: /home/runner/.gradle/caches/transforms-3/fdf7cb61aa48a697a9df8fc1913e04bc/transformed/appcompat-resources-1.6.1 is not up-to-date because:
+  No history is available.
+>>>>>>> Stashed changes
 Transforming core-ktx-1.12.0.aar (androidx.core:core-ktx:1.12.0) with ExtractAarTransform
 Transforming core-ktx-1.12.0.aar (androidx.core:core-ktx:1.12.0) with AarTransform
 Transforming annotation-experimental-1.3.0.aar (androidx.annotation:annotation-experimental:1.3.0) with ExtractAarTransform
@@ -31,6 +89,7 @@ Transforming profileinstaller-1.3.0.aar (androidx.profileinstaller:profileinstal
 Transforming profileinstaller-1.3.0.aar (androidx.profileinstaller:profileinstaller:1.3.0) with AarTransform
 Transforming startup-runtime-1.1.1.aar (androidx.startup:startup-runtime:1.1.1) with ExtractAarTransform
 Transforming startup-runtime-1.1.1.aar (androidx.startup:startup-runtime:1.1.1) with AarTransform
+<<<<<<< Updated upstream
 Transforming tracing-1.0.0.aar (androidx.tracing:tracing:1.0.0) with ExtractAarTransform
 Transforming tracing-1.0.0.aar (androidx.tracing:tracing:1.0.0) with AarTransform
 Transforming core-runtime-2.2.0.aar (androidx.arch.core:core-runtime:2.2.0) with ExtractAarTransform
@@ -41,10 +100,13 @@ Transforming localbroadcastmanager-1.0.0.aar (androidx.localbroadcastmanager:loc
 Transforming localbroadcastmanager-1.0.0.aar (androidx.localbroadcastmanager:localbroadcastmanager:1.0.0) with AarTransform
 Transforming print-1.0.0.aar (androidx.print:print:1.0.0) with ExtractAarTransform
 Transforming print-1.0.0.aar (androidx.print:print:1.0.0) with AarTransform
+=======
+>>>>>>> Stashed changes
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/c006c7e4abea24f449d8c80c9e056f58/transformed/material-1.11.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/c006c7e4abea24f449d8c80c9e056f58/transformed/material-1.11.0 is not up-to-date because:
   No history is available.
+<<<<<<< Updated upstream
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/fdf7cb61aa48a697a9df8fc1913e04bc/transformed/appcompat-resources-1.6.1 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/fdf7cb61aa48a697a9df8fc1913e04bc/transformed/appcompat-resources-1.6.1 is not up-to-date because:
@@ -72,14 +134,59 @@ AarTransform: /home/runner/.gradle/caches/transforms-3/f10e4dcb93a122529ce36e963
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/f1b556d4e2fb923011b12cae8e98c969/transformed/activity-1.8.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/f1b556d4e2fb923011b12cae8e98c969/transformed/activity-1.8.0 is not up-to-date because:
+=======
+Transforming tracing-1.0.0.aar (androidx.tracing:tracing:1.0.0) with ExtractAarTransform
+Transforming tracing-1.0.0.aar (androidx.tracing:tracing:1.0.0) with AarTransform
+Transforming core-runtime-2.2.0.aar (androidx.arch.core:core-runtime:2.2.0) with ExtractAarTransform
+Transforming core-runtime-2.2.0.aar (androidx.arch.core:core-runtime:2.2.0) with AarTransform
+Transforming documentfile-1.0.0.aar (androidx.documentfile:documentfile:1.0.0) with ExtractAarTransform
+Transforming documentfile-1.0.0.aar (androidx.documentfile:documentfile:1.0.0) with AarTransform
+Transforming localbroadcastmanager-1.0.0.aar (androidx.localbroadcastmanager:localbroadcastmanager:1.0.0) with ExtractAarTransform
+Transforming localbroadcastmanager-1.0.0.aar (androidx.localbroadcastmanager:localbroadcastmanager:1.0.0) with AarTransform
+Transforming print-1.0.0.aar (androidx.print:print:1.0.0) with ExtractAarTransform
+Transforming print-1.0.0.aar (androidx.print:print:1.0.0) with AarTransform
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/bd4b3a0f9ce03c46acf898a6cf446411/transformed/appcompat-1.6.1 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/bd4b3a0f9ce03c46acf898a6cf446411/transformed/appcompat-1.6.1 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/bcc17701914a9dc7c110de79b7f7c313/transformed/emoji2-views-helper-1.2.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/bcc17701914a9dc7c110de79b7f7c313/transformed/emoji2-views-helper-1.2.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/2497a04ce439ba5192d483e53a542533/transformed/emoji2-1.2.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/f10e4dcb93a122529ce36e963c4b7a34/transformed/fragment-1.3.6 because:
+  Build cache is disabled
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/f1b556d4e2fb923011b12cae8e98c969/transformed/activity-1.8.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/f1b556d4e2fb923011b12cae8e98c969/transformed/activity-1.8.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/31538af614257d3cb338d06396edda72/transformed/viewpager2-1.0.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/31538af614257d3cb338d06396edda72/transformed/viewpager2-1.0.0 is not up-to-date because:
+  No history is available.
+AarTransform: /home/runner/.gradle/caches/transforms-3/f10e4dcb93a122529ce36e963c4b7a34/transformed/fragment-1.3.6 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/225c3beaba08bee5b905ff0919dcdf23/transformed/drawerlayout-1.1.1 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/225c3beaba08bee5b905ff0919dcdf23/transformed/drawerlayout-1.1.1 is not up-to-date because:
+>>>>>>> Stashed changes
   No history is available.
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/a5632da62af1d1eb2a83a64d3736fa95/transformed/coordinatorlayout-1.1.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/a5632da62af1d1eb2a83a64d3736fa95/transformed/coordinatorlayout-1.1.0 is not up-to-date because:
   No history is available.
+<<<<<<< Updated upstream
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/225c3beaba08bee5b905ff0919dcdf23/transformed/drawerlayout-1.1.1 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/225c3beaba08bee5b905ff0919dcdf23/transformed/drawerlayout-1.1.1 is not up-to-date because:
+=======
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/52f9636c0d11d3bfcb5e943511737b87/transformed/vectordrawable-animated-1.1.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/52f9636c0d11d3bfcb5e943511737b87/transformed/vectordrawable-animated-1.1.0 is not up-to-date because:
+>>>>>>> Stashed changes
   No history is available.
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/1c50d0b93f5654fdd1fe52699098705d/transformed/dynamicanimation-1.0.0 because:
   Build cache is disabled
@@ -89,6 +196,7 @@ Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/a5ca
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/a5cab403d72b704056355876abf3519f/transformed/transition-1.2.0 is not up-to-date because:
   No history is available.
+<<<<<<< Updated upstream
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/52f9636c0d11d3bfcb5e943511737b87/transformed/vectordrawable-animated-1.1.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/52f9636c0d11d3bfcb5e943511737b87/transformed/vectordrawable-animated-1.1.0 is not up-to-date because:
@@ -108,11 +216,33 @@ AarTransform: /home/runner/.gradle/caches/transforms-3/87cb1a3841838c72f8cf2447c
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/aa8615742f08a0d279a782e405817db1/transformed/legacy-support-core-utils-1.0.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/aa8615742f08a0d279a782e405817db1/transformed/legacy-support-core-utils-1.0.0 is not up-to-date because:
+=======
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/0bdb15d748ec384b3451d55e0239b6bf/transformed/vectordrawable-1.1.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/0bdb15d748ec384b3451d55e0239b6bf/transformed/vectordrawable-1.1.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/643027e6667071607a5118ef5d827bf2/transformed/viewpager-1.0.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/643027e6667071607a5118ef5d827bf2/transformed/viewpager-1.0.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/87cb1a3841838c72f8cf2447cdadf2ee/transformed/loader-1.0.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/87cb1a3841838c72f8cf2447cdadf2ee/transformed/loader-1.0.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/aa8615742f08a0d279a782e405817db1/transformed/legacy-support-core-utils-1.0.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/aa8615742f08a0d279a782e405817db1/transformed/legacy-support-core-utils-1.0.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/398a1b4bf00b3be4e03626f09a7e66f7/transformed/customview-1.1.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/398a1b4bf00b3be4e03626f09a7e66f7/transformed/customview-1.1.0 is not up-to-date because:
+>>>>>>> Stashed changes
   No history is available.
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/373f4b8483e0afdfb0b3427c565da192/transformed/recyclerview-1.1.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/373f4b8483e0afdfb0b3427c565da192/transformed/recyclerview-1.1.0 is not up-to-date because:
   No history is available.
+<<<<<<< Updated upstream
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/398a1b4bf00b3be4e03626f09a7e66f7/transformed/customview-1.1.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/398a1b4bf00b3be4e03626f09a7e66f7/transformed/customview-1.1.0 is not up-to-date because:
@@ -132,6 +262,23 @@ AarTransform: /home/runner/.gradle/caches/transforms-3/f198f5da6012adecb8086a1c3
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1 is not up-to-date because:
+=======
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/01be542a8a7642ecba403b94caa2bdf6/transformed/core-1.12.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/f198f5da6012adecb8086a1c3910a86d/transformed/lifecycle-livedata-core-2.6.1 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/f198f5da6012adecb8086a1c3910a86d/transformed/lifecycle-livedata-core-2.6.1 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1 because:
+  Build cache is disabled
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/7591184b4e14fbc0b911fe042afac8fc/transformed/savedstate-1.2.1 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/86ffc40331241160dd6ae3395fef3d53/transformed/lifecycle-process-2.6.1 is not up-to-date because:
+  No history is available.
+AarTransform: /home/runner/.gradle/caches/transforms-3/7591184b4e14fbc0b911fe042afac8fc/transformed/savedstate-1.2.1 is not up-to-date because:
+>>>>>>> Stashed changes
   No history is available.
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/28c0015d9b4fa3b7463e570a8383eed6/transformed/lifecycle-livedata-2.6.1 because:
   Build cache is disabled
@@ -149,6 +296,7 @@ Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/6442
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/64428a8c57497059efa45c04e3472c37/transformed/lifecycle-viewmodel-savedstate-2.6.1 is not up-to-date because:
   No history is available.
+<<<<<<< Updated upstream
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/6bcb5a180b7c5ae245cf3db8b69f9a84/transformed/core-ktx-1.12.0 because:
   Build cache is disabled
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/d2dd9ba6197a97326b46e103e8445e96/transformed/annotation-experimental-1.3.0 because:
@@ -157,6 +305,16 @@ AarTransform: /home/runner/.gradle/caches/transforms-3/6bcb5a180b7c5ae245cf3db8b
   No history is available.
 AarTransform: /home/runner/.gradle/caches/transforms-3/d2dd9ba6197a97326b46e103e8445e96/transformed/annotation-experimental-1.3.0 is not up-to-date because:
   No history is available.
+=======
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/d2dd9ba6197a97326b46e103e8445e96/transformed/annotation-experimental-1.3.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/d2dd9ba6197a97326b46e103e8445e96/transformed/annotation-experimental-1.3.0 is not up-to-date because:
+  No history is available.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/6bcb5a180b7c5ae245cf3db8b69f9a84/transformed/core-ktx-1.12.0 because:
+  Build cache is disabled
+AarTransform: /home/runner/.gradle/caches/transforms-3/6bcb5a180b7c5ae245cf3db8b69f9a84/transformed/core-ktx-1.12.0 is not up-to-date because:
+  No history is available.
+>>>>>>> Stashed changes
 Caching disabled for AarTransform: /home/runner/.gradle/caches/transforms-3/a166a79544ed8e180c42e28d15a29b4f/transformed/cursoradapter-1.0.0 because:
   Build cache is disabled
 AarTransform: /home/runner/.gradle/caches/transforms-3/a166a79544ed8e180c42e28d15a29b4f/transformed/cursoradapter-1.0.0 is not up-to-date because:
@@ -358,6 +516,7 @@ ERROR: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main
     	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
     	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
     	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+<<<<<<< Updated upstream
     	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
     	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
     	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
@@ -390,12 +549,15 @@ ERROR: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main
     	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+=======
+>>>>>>> Stashed changes
     	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
     	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
     	at java.base/java.lang.Thread.run(Thread.java:840)
     
+<<<<<<< Updated upstream
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hi_values-hi.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-pt_values-pt.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values_values.arsc.flat
@@ -477,12 +639,99 @@ Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-eu_values-eu.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hdpi-v4_values-hdpi-v4.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-or_values-or.arsc.flat
+=======
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt/values-pt.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-pt_values-pt.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hi/values-hi.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hi_values-hi.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values_values.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-watch-v21/values-watch-v21.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-watch-v21_values-watch-v21.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hu/values-hu.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hu_values-hu.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hy/values-hy.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hy_values-hy.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hr/values-hr.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hr_values-hr.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v18/values-v18.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v18_values-v18.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v17/values-v17.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v17_values-v17.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-in/values-in.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-in_values-in.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-af/values-af.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-af_values-af.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v16/values-v16.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v16_values-v16.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-w360dp-port-v13/values-w360dp-port-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rHK/values-zh-rHK.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-zh-rHK_values-zh-rHK.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-is/values-is.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-is_values-is.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-it/values-it.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-it_values-it.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-b+sr+Latn/values-b+sr+Latn.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-iw/values-iw.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-iw_values-iw.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-es-rUS_values-es-rUS.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ar/values-ar.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ar_values-ar.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v21/values-v21.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v21_values-v21.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v23/values-v23.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v23_values-v23.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v25/values-v25.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v25_values-v25.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pt-rPT/values-pt-rPT.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-pt-rPT_values-pt-rPT.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-az/values-az.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-az_values-az.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ro/values-ro.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ro_values-ro.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-be/values-be.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-be_values-be.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zu/values-zu.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-zu_values-zu.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rCA/values-en-rCA.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-en-rCA_values-en-rCA.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v28/values-v28.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v28_values-v28.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bg/values-bg.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-bg_values-bg.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-si/values-si.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-si_values-si.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v22/values-v22.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v22_values-v22.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h360dp-land-v13/values-h360dp-land-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ru/values-ru.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ru_values-ru.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sq/values-sq.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-sq_values-sq.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v31/values-v31.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v31_values-v31.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-bs/values-bs.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-bs_values-bs.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-kn/values-kn.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-kn_values-kn.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v34/values-v34.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-v34_values-v34.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ta/values-ta.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ta_values-ta.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ca/values-ca.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ca_values-ca.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-h720dp-v13_values-h720dp-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-xlarge-v4_values-xlarge-v4.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-km/values-km.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-km_values-km.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-de/values-de.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-de_values-de.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sw/values-sw.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-sw_values-sw.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sk/values-sk.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-sk_values-sk.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-en-rIN_values-en-rIN.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-cs/values-cs.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-cs_values-cs.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sr/values-sr.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-sr_values-sr.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ur/values-ur.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ur_values-ur.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-tl/values-tl.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-tl_values-tl.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-sv/values-sv.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-sv_values-sv.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uz/values-uz.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-uz_values-uz.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ky/values-ky.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ky_values-ky.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-en-rAU_values-en-rAU.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lv/values-lv.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-lv_values-lv.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-el/values-el.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-el_values-el.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-te/values-te.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-te_values-te.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-uk/values-uk.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-uk_values-uk.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-da/values-da.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-da_values-da.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-et/values-et.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-et_values-et.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mn/values-mn.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-mn_values-mn.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-lo/values-lo.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-lo_values-lo.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-nb/values-nb.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-nb_values-nb.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ms/values-ms.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ms_values-ms.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-ne/values-ne.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-ne_values-ne.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-h550dp-port-v13/values-h550dp-port-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mk/values-mk.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-mk_values-mk.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fi/values-fi.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-fi_values-fi.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-es/values-es.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-es_values-es.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-mr/values-mr.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-mr_values-mr.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-hdpi-v4_values-hdpi-v4.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-w400dp-port-v13/values-w400dp-port-v13.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-w400dp-port-v13_values-w400dp-port-v13.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-night-v8_values-night-v8.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-or/values-or.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-or_values-or.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-zh-rTW_values-zh-rTW.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-pa_values-pa.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-zh-rCN/values-zh-rCN.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-zh-rCN_values-zh-rCN.arsc.flat
+Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-eu/values-eu.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-eu_values-eu.arsc.flat
+>>>>>>> Stashed changes
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-large-v4_values-large-v4.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-small-v4/values-small-v4.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-small-v4_values-small-v4.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gu/values-gu.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-gu_values-gu.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-port/values-port.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-port_values-port.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-fa/values-fa.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-fa_values-fa.arsc.flat
+<<<<<<< Updated upstream
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-pa/values-pa.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-pa_values-pa.arsc.flat
+=======
+>>>>>>> Stashed changes
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rXC/values-en-rXC.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-en-rXC_values-en-rXC.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-en-rGB_values-en-rGB.arsc.flat
 Compiling XML table /home/runner/work/Devtools/Devtools/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-gl/values-gl.xml to /home/runner/work/Devtools/Devtools/app/build/intermediates/merged_res/debug/values-gl_values-gl.arsc.flat
@@ -801,6 +1050,115 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:mer
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+<<<<<<< Updated upstream
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: com.android.build.gradle.tasks.ResourceException: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+	at com.android.build.gradle.tasks.MergeResources.doFullTaskAction(MergeResources.kt:294)
+	at com.android.build.gradle.tasks.MergeResources.doTaskAction(MergeResources.kt:325)
+	at com.android.build.gradle.internal.tasks.NewIncrementalTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:69)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.NewIncrementalTask.taskAction(NewIncrementalTask.kt:46)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:45)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(IncrementalTaskAction.java:26)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:248)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:233)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:216)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:199)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:166)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+=======
+Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:308)
+	at com.android.ide.common.resources.DataMerger.mergeData(DataMerger.java:299)
+	at com.android.ide.common.resources.ResourceMerger.mergeData(ResourceMerger.java:391)
+	at com.android.build.gradle.tasks.MergeResources$doFullTaskAction$1$1$2.invoke(MergeResources.kt:271)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.tasks.MergeResources.doFullTaskAction(MergeResources.kt:267)
+	... 157 more
+Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+	at com.android.ide.common.resources.MergingException$Builder.build(MergingException.java:152)
+	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:304)
+	... 162 more
+Caused by: org.xml.sax.SAXParseException; systemId: file:/home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml; lineNumber: 10; columnNumber: 5; Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at android.databinding.tool.store.LayoutFileParser.stripFile(LayoutFileParser.java:469)
+	at android.databinding.tool.store.LayoutFileParser.parseXml(LayoutFileParser.java:97)
+	at android.databinding.tool.LayoutXmlProcessor.processSingleFile(LayoutXmlProcessor.java:161)
+	at com.android.build.gradle.tasks.MergeResources$maybeCreateLayoutProcessor$1.processSingleFile(MergeResources.kt:627)
+	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:243)
+	... 162 more
+
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':app:mergeDebugResources'.
+> /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+
+* Try:
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:mergeDebugResources'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:148)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:146)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+>>>>>>> Stashed changes
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:78)
+<<<<<<< Updated upstream
+=======
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
@@ -844,6 +1202,7 @@ Caused by: com.android.build.gradle.tasks.ResourceException: /home/runner/work/D
 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:78)
+>>>>>>> Stashed changes
 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
@@ -934,6 +1293,7 @@ Caused by: com.android.build.gradle.tasks.ResourceException: /home/runner/work/D
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+<<<<<<< Updated upstream
 	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
@@ -966,6 +1326,8 @@ Caused by: com.android.build.gradle.tasks.ResourceException: /home/runner/work/D
 	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+=======
+>>>>>>> Stashed changes
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
@@ -978,11 +1340,19 @@ Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_
 	at com.android.build.gradle.tasks.MergeResources$doFullTaskAction$1$1$2.invoke(MergeResources.kt:271)
 	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
 	at com.android.build.gradle.tasks.MergeResources.doFullTaskAction(MergeResources.kt:267)
+<<<<<<< Updated upstream
 	... 165 more
 Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
 	at com.android.ide.common.resources.MergingException$Builder.build(MergingException.java:152)
 	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:304)
 	... 170 more
+=======
+	... 133 more
+Caused by: /home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml:10:5: Error: Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
+	at com.android.ide.common.resources.MergingException$Builder.build(MergingException.java:152)
+	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:304)
+	... 138 more
+>>>>>>> Stashed changes
 Caused by: org.xml.sax.SAXParseException; systemId: file:/home/runner/work/Devtools/Devtools/app/src/main/res/layout/activity_main.xml; lineNumber: 10; columnNumber: 5; Element type "LinearLayout" must be followed by either attribute specifications, ">" or "/>".
 	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
 	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
@@ -992,9 +1362,17 @@ Caused by: org.xml.sax.SAXParseException; systemId: file:/home/runner/work/Devto
 	at android.databinding.tool.LayoutXmlProcessor.processSingleFile(LayoutXmlProcessor.java:161)
 	at com.android.build.gradle.tasks.MergeResources$maybeCreateLayoutProcessor$1.processSingleFile(MergeResources.kt:627)
 	at com.android.ide.common.resources.MergedResourceWriter.end(MergedResourceWriter.java:243)
+<<<<<<< Updated upstream
 	... 170 more
 
 ==============================================================================
 
 BUILD FAILED in 2m 38s
+=======
+	... 138 more
+
+==============================================================================
+
+BUILD FAILED in 2m 46s
+>>>>>>> Stashed changes
 5 actionable tasks: 5 executed
