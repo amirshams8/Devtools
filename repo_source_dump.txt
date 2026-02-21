@@ -1098,22 +1098,35 @@ import kotlinx.coroutines.delay
 /**
  * All UI interaction with the Claude Android app.
  *
- * Response completion detection:
- *   - Listens for TYPE_WINDOW_CONTENT_CHANGED events from com.anthropic.claude.
- *   - Stamps lastClaudeEventMs on each event.
- *   - Response is complete when no events have arrived for STABILITY_WINDOW_MS
- *     AND the streaming indicator node is absent.
+ * Findings from uiautomator dump of com.anthropic.claude:
  *
- * Code extraction strategy:
- *   1. Find TextViews whose text matches LANGUAGE_LABEL_REGEX (e.g. "kotlin").
- *   2. The next sibling TextView contains the code block content.
- *   3. Fallback: largest TextView in the window.
+ * RESPONSE TEXT:
+ *   android.view.View [focusable=true]
+ *     └── android.widget.TextView  ← prose text of Claude's reply
  *
- * File attachment:
- *   - Taps Claude's "Add Files" button, waits for picker, selects file by name.
- *   - Picker navigation assumes files are visible at the default location
- *     (/sdcard/ai-automation/build_error_logs/). If Claude uses a different
- *     picker the node text search will still find items by filename.
+ * CODE BLOCKS:
+ *   android.view.View [focusable=true]
+ *     └── android.widget.HorizontalScrollView [scrollable=true]
+ *           └── android.widget.TextView  ← code content
+ *     └── android.widget.TextView  ← prose continuation
+ *
+ *   There is NO language label node ("kotlin", "java" etc.) —
+ *   code blocks are identified by their HorizontalScrollView parent.
+ *
+ * INPUT AREA:
+ *   android.widget.EditText [focusable=true, clickable=true]
+ *     hint child: TextView text="Reply to Claude…"
+ *
+ * ADD FILES BUTTON:
+ *   android.view.View [clickable=true, focusable=true]
+ *     └── android.view.View content-desc="Add to chat"
+ *
+ * SEND BUTTON (only present when input has text):
+ *   android.view.View [clickable=true, focusable=true]
+ *     └── android.view.View content-desc="Send"
+ *
+ * STREAMING INDICATORS: "●", "Thinking…", "Thinking...", "▌"
+ *   appear as TextView text while Claude is generating.
  */
 class UIWatcherModule(val service: AccessibilityService) {
 
@@ -1128,13 +1141,9 @@ class UIWatcherModule(val service: AccessibilityService) {
 
         val STREAMING_INDICATORS = setOf("●", "Thinking…", "Thinking...", "▌")
 
-        val LANGUAGE_LABEL_REGEX = Regex(
-            "^(kotlin|java|python|bash|shell|javascript|typescript|xml|json|gradle|swift|cpp|c|html|css|yaml|toml)$",
-            RegexOption.IGNORE_CASE
-        )
-
-        val ADD_FILES_KEYWORDS  = listOf("add files", "attach", "attachment", "paperclip")
-        val SEND_BUTTON_KEYWORDS = listOf("send message", "send", "submit")
+        // Content-desc values confirmed from uiautomator dump
+        const val ADD_TO_CHAT_DESC  = "Add to chat"
+        const val SEND_DESC         = "Send"
     }
 
     @Volatile var lastClaudeEventMs: Long = 0L
@@ -1148,7 +1157,7 @@ class UIWatcherModule(val service: AccessibilityService) {
 
     suspend fun waitForResponseComplete(timeoutMs: Long = RESPONSE_TIMEOUT_MS): Boolean {
         val deadline = System.currentTimeMillis() + timeoutMs
-        delay(1_500L)  // give Claude a moment to start generating
+        delay(1_500L) // give Claude a moment to start generating
 
         while (System.currentTimeMillis() < deadline) {
             val elapsed = System.currentTimeMillis() - lastClaudeEventMs
@@ -1169,13 +1178,20 @@ class UIWatcherModule(val service: AccessibilityService) {
 
     // ── Code extraction ───────────────────────────────────────────────────────
 
+    /**
+     * Extracts code blocks from Claude's response.
+     *
+     * Code blocks in Claude's UI are TextViews inside a HorizontalScrollView.
+     * We walk the tree looking for HorizontalScrollView nodes and grab their
+     * TextView children. Falls back to the largest TextView if none found.
+     */
     fun extractCodeBlocks(root: AccessibilityNodeInfo?): List<String> {
         root ?: return emptyList()
         val blocks = mutableListOf<String>()
         collectCodeBlocks(root, blocks)
 
         if (blocks.isEmpty()) {
-            Log.w(TAG, "Primary extraction empty, trying fallback")
+            Log.w(TAG, "No HorizontalScrollView code blocks found, trying largest TextView fallback")
             largestTextViewText(root)?.takeIf { it.isNotBlank() }?.let { blocks.add(it) }
         }
 
@@ -1183,26 +1199,26 @@ class UIWatcherModule(val service: AccessibilityService) {
         return blocks
     }
 
+    /**
+     * Walks the node tree looking for HorizontalScrollView nodes.
+     * Each one wraps a code block — the TextView child contains the code text.
+     */
     private fun collectCodeBlocks(node: AccessibilityNodeInfo, out: MutableList<String>) {
-        val text = node.text?.toString() ?: ""
-        if (node.className?.toString()?.endsWith("TextView") == true &&
-            LANGUAGE_LABEL_REGEX.matches(text.trim())) {
-            val parent = node.parent
-            if (parent != null) {
-                var seenLabel = false
-                for (i in 0 until parent.childCount) {
-                    val child = parent.getChild(i) ?: continue
-                    if (seenLabel) {
-                        child.text?.toString()
-                            ?.takeIf { it.isNotBlank() }
-                            ?.let { out.add(it) }
-                        break
-                    }
-                    if (child == node) seenLabel = true
+        if (node.className?.toString() == "android.widget.HorizontalScrollView") {
+            // Grab all TextView children — the code is directly inside
+            for (i in 0 until node.childCount) {
+                val child = node.getChild(i) ?: continue
+                val text = child.text?.toString()
+                if (!text.isNullOrBlank()) {
+                    out.add(text)
+                    Log.d(TAG, "Code block found (${text.length} chars): ${text.take(60)}…")
                 }
             }
+            return // don't recurse into the scrollview children again
         }
-        for (i in 0 until node.childCount) collectCodeBlocks(node.getChild(i) ?: continue, out)
+        for (i in 0 until node.childCount) {
+            collectCodeBlocks(node.getChild(i) ?: continue, out)
+        }
     }
 
     private fun largestTextViewText(root: AccessibilityNodeInfo): String? {
@@ -1221,6 +1237,9 @@ class UIWatcherModule(val service: AccessibilityService) {
 
     // ── Prompt field ──────────────────────────────────────────────────────────
 
+    /**
+     * Finds the EditText (hint: "Reply to Claude…") and sets its text.
+     */
     fun fillPromptField(text: String): Boolean {
         val root  = service.rootInActiveWindow ?: return false
         val input = findEditText(root) ?: run {
@@ -1235,16 +1254,22 @@ class UIWatcherModule(val service: AccessibilityService) {
 
     // ── Tap helpers ───────────────────────────────────────────────────────────
 
+    /**
+     * Taps the "Add to chat" button (confirmed content-desc from uiautomator dump).
+     * The clickable node is the parent View wrapping the content-desc child.
+     */
     suspend fun tapAddFilesButton(): Boolean {
         val root = service.rootInActiveWindow ?: return false
-        val node = findNodeByContentDesc(root, ADD_FILES_KEYWORDS)
-            ?: findNodeByText(root, ADD_FILES_KEYWORDS.toSet())
-            ?: run {
-                Log.w(TAG, "Add Files button not found")
-                return false
-            }
+        // Find the inner view with content-desc="Add to chat", then click its clickable parent
+        val node = findClickableParentByDesc(root, ADD_TO_CHAT_DESC) ?: run {
+            Log.w(TAG, "Add to chat button not found")
+            return false
+        }
         return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            .also { if (it) delay(FILE_ATTACH_DELAY_MS) }
+            .also { success ->
+                Log.d(TAG, "tapAddFilesButton: $success")
+                if (success) delay(FILE_ATTACH_DELAY_MS)
+            }
     }
 
     suspend fun selectFileInPicker(fileName: String): Boolean {
@@ -1269,28 +1294,54 @@ class UIWatcherModule(val service: AccessibilityService) {
         delay(POST_TAP_DELAY_MS)
     }
 
+    /**
+     * Taps the "Send" button (confirmed content-desc from uiautomator dump).
+     * Only present when there is text in the input field.
+     */
     suspend fun tapSendButton(): Boolean {
         val root = service.rootInActiveWindow ?: return false
-        val node = findNodeByContentDesc(root, SEND_BUTTON_KEYWORDS)
-            ?: findNodeByText(root, SEND_BUTTON_KEYWORDS.toSet())
-            ?: run {
-                Log.w(TAG, "Send button not found")
-                return false
-            }
+        val node = findClickableParentByDesc(root, SEND_DESC) ?: run {
+            Log.w(TAG, "Send button not found (may not be visible yet)")
+            return false
+        }
         return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            .also { if (it) delay(POST_TAP_DELAY_MS) }
+            .also { success ->
+                Log.d(TAG, "tapSendButton: $success")
+                if (success) delay(POST_TAP_DELAY_MS)
+            }
     }
 
     // ── Node search ───────────────────────────────────────────────────────────
 
-    private fun findNodeByContentDesc(
+    /**
+     * Finds a node whose content-desc matches [desc], then walks UP the tree
+     * to find the nearest ancestor that is clickable=true.
+     * This matches Claude's pattern where the icon has the content-desc but
+     * the clickable hit-area is the parent View.
+     */
+    private fun findClickableParentByDesc(
         root: AccessibilityNodeInfo,
-        keywords: List<String>
+        desc: String
     ): AccessibilityNodeInfo? {
-        val desc = root.contentDescription?.toString()?.lowercase() ?: ""
-        if (keywords.any { desc.contains(it) }) return root
+        val target = findNodeByDesc(root, desc) ?: return null
+        // Walk up to find clickable ancestor
+        var current: AccessibilityNodeInfo? = target.parent
+        while (current != null) {
+            if (current.isClickable) return current
+            current = current.parent
+        }
+        // Fallback: return the target itself if nothing clickable found above
+        return if (target.isClickable) target else null
+    }
+
+    private fun findNodeByDesc(
+        root: AccessibilityNodeInfo,
+        desc: String
+    ): AccessibilityNodeInfo? {
+        val d = root.contentDescription?.toString() ?: ""
+        if (d.equals(desc, ignoreCase = true)) return root
         for (i in 0 until root.childCount) {
-            findNodeByContentDesc(root.getChild(i) ?: continue, keywords)?.let { return it }
+            findNodeByDesc(root.getChild(i) ?: continue, desc)?.let { return it }
         }
         return null
     }
