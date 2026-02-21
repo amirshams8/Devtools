@@ -1,3 +1,55 @@
+//===== FILE: app/src/main/kotlin/com/jarvismini/devtools/autobuild/models/ExtractionMode.kt =====
+package com.jarvismini.devtools.autobuild.models
+
+/**
+ * How the app extracts code from Claude's response.
+ *
+ * CODE_BLOCK      — Claude typed code inside a code fence in chat.
+ *                   Identified by HorizontalScrollView in the node tree.
+ *                   App writes ai-output.txt directly.
+ *
+ * DOWNLOADED_FILE — Claude attached downloadable file(s).
+ *                   App taps every visible download button.
+ *                   Termux assembles ai-output.txt from new files in /sdcard/Download/.
+ *
+ * PLAIN_TEXT      — Claude pasted raw code with no code fence.
+ *                   App grabs largest TextView, writes ai-output.txt directly.
+ */
+enum class ExtractionMode {
+    CODE_BLOCK,
+    DOWNLOADED_FILE,
+    PLAIN_TEXT
+}
+
+
+//===== FILE: app/src/main/kotlin/com/jarvismini/devtools/autobuild/ModeStore.kt =====
+package com.jarvismini.devtools.autobuild
+
+import android.content.Context
+import com.jarvismini.devtools.autobuild.models.ExtractionMode
+
+/**
+ * Persists the user-selected ExtractionMode to SharedPreferences.
+ * Readable from both MainActivity and the background service.
+ */
+object ModeStore {
+    private const val PREFS = "devtools_prefs"
+    private const val KEY   = "extraction_mode"
+
+    fun save(context: Context, mode: ExtractionMode) {
+        context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .edit().putString(KEY, mode.name).apply()
+    }
+
+    fun load(context: Context): ExtractionMode {
+        val raw = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+            .getString(KEY, ExtractionMode.CODE_BLOCK.name)
+        return runCatching { ExtractionMode.valueOf(raw!!) }
+            .getOrDefault(ExtractionMode.CODE_BLOCK)
+    }
+}
+
+
 //===== FILE: app/src/main/kotlin/com/jarvismini/devtools/autobuild/UIWatcherModule.kt =====
 package com.jarvismini.devtools.autobuild
 
@@ -5,72 +57,86 @@ import android.accessibilityservice.AccessibilityService
 import android.os.Bundle
 import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
+import com.jarvismini.devtools.autobuild.models.ExtractionMode
 import kotlinx.coroutines.delay
+import java.io.File
 
 /**
  * All UI interaction with the Claude Android app.
  *
- * Findings from uiautomator dump of com.anthropic.claude:
+ * Three extraction modes:
  *
- * RESPONSE TEXT:
- *   android.view.View [focusable=true]
- *     └── android.widget.TextView  ← prose text of Claude's reply
+ *   CODE_BLOCK
+ *     Walks node tree for HorizontalScrollView → TextView children.
+ *     Joins all blocks and writes /sdcard/ai-automation/ai-output.txt directly.
  *
- * CODE BLOCKS:
- *   android.view.View [focusable=true]
- *     └── android.widget.HorizontalScrollView [scrollable=true]
- *           └── android.widget.TextView  ← code content
- *     └── android.widget.TextView  ← prose continuation
+ *   DOWNLOADED_FILE
+ *     1. Fires Termux: build_runner.sh --snapshot
+ *        (records what files already exist in /sdcard/Download/)
+ *     2. Finds and taps ALL visible download buttons in Claude's UI sequentially.
+ *     3. Fires Termux: build_runner.sh --assemble-downloads
+ *        (Termux detects new files, assembles ai-output.txt in file-header format)
+ *     4. Polls for /sdcard/ai-automation/downloads_assembled.flag.
+ *     Returns true once flag exists — OrchestrationController then moves to TRIGGERING_BUILD.
+ *     NOTE: actual file reading / ai-output.txt assembly is entirely done by Termux,
+ *     not by this app. No clipboard. No size limits.
  *
- *   There is NO language label node ("kotlin", "java" etc.) —
- *   code blocks are identified by their HorizontalScrollView parent.
+ *   PLAIN_TEXT
+ *     Grabs the largest TextView in the window, writes ai-output.txt directly.
  *
- * INPUT AREA:
- *   android.widget.EditText [focusable=true, clickable=true]
- *     hint child: TextView text="Reply to Claude…"
- *
- * ADD FILES BUTTON:
- *   android.view.View [clickable=true, focusable=true]
- *     └── android.view.View content-desc="Add to chat"
- *
- * SEND BUTTON (only present when input has text):
- *   android.view.View [clickable=true, focusable=true]
- *     └── android.view.View content-desc="Send"
- *
- * STREAMING INDICATORS: "●", "Thinking…", "Thinking...", "▌"
- *   appear as TextView text while Claude is generating.
+ * Node content-desc values below are PLACEHOLDERS pending uiautomator dump verification.
+ * After dumping the real tree, update DOWNLOAD_BUTTON_DESCS with confirmed values.
  */
 class UIWatcherModule(val service: AccessibilityService) {
 
     companion object {
         private const val TAG = "DevTools:UIWatcher"
 
-        const val CLAUDE_PKG            = "com.anthropic.claude"
-        const val STABILITY_WINDOW_MS   = 2_500L
-        const val RESPONSE_TIMEOUT_MS   = 120_000L
-        const val POST_TAP_DELAY_MS     = 900L
-        const val FILE_ATTACH_DELAY_MS  = 1_600L
+        const val CLAUDE_PKG           = "com.anthropic.claude"
+        const val STABILITY_WINDOW_MS  = 2_500L
+        const val RESPONSE_TIMEOUT_MS  = 120_000L
+        const val POST_TAP_DELAY_MS    = 900L
+        const val FILE_ATTACH_DELAY_MS = 1_600L
+
+        // How long to wait for Termux to finish assembling ai-output.txt
+        const val ASSEMBLY_TIMEOUT_MS  = 60_000L
+        const val ASSEMBLY_POLL_MS     = 1_000L
 
         val STREAMING_INDICATORS = setOf("●", "Thinking…", "Thinking...", "▌")
 
-        // Content-desc values confirmed from uiautomator dump
-        const val ADD_TO_CHAT_DESC  = "Add to chat"
-        const val SEND_DESC         = "Send"
+        const val ADD_TO_CHAT_DESC = "Add to chat"
+        const val SEND_DESC        = "Send"
+
+        // ── PLACEHOLDERS — update after uiautomator dump ──────────────────────
+        // These are the content-desc values tried IN ORDER when looking for
+        // download buttons. The first match per node wins.
+        val DOWNLOAD_BUTTON_DESCS = listOf(
+            "Download file",
+            "Download",
+            "download"
+        )
+        // File extensions that count as code output from Claude.
+        // Any new file in /sdcard/Download/ matching these is picked up by Termux.
+        val CODE_EXTENSIONS = setOf(
+            "kt", "java", "py", "txt", "xml", "json", "gradle",
+            "kts", "sh", "cpp", "c", "h", "ts", "js", "md"
+        )
+        // ─────────────────────────────────────────────────────────────────────
+
+        val ASSEMBLED_FLAG = File("/sdcard/ai-automation/downloads_assembled.flag")
     }
 
     @Volatile var lastClaudeEventMs: Long = 0L
 
-    /** Called by AutoBuildService.onAccessibilityEvent for every Claude event. */
     fun onAccessibilityEvent(packageName: String?) {
         if (packageName == CLAUDE_PKG) lastClaudeEventMs = System.currentTimeMillis()
     }
 
-    // ── Response detection ────────────────────────────────────────────────────
+    // ── Response completion ───────────────────────────────────────────────────
 
     suspend fun waitForResponseComplete(timeoutMs: Long = RESPONSE_TIMEOUT_MS): Boolean {
         val deadline = System.currentTimeMillis() + timeoutMs
-        delay(1_500L) // give Claude a moment to start generating
-
+        delay(1_500L)
         while (System.currentTimeMillis() < deadline) {
             val elapsed = System.currentTimeMillis() - lastClaudeEventMs
             if (elapsed >= STABILITY_WINDOW_MS && !isStreamingIndicatorVisible()) {
@@ -88,52 +154,77 @@ class UIWatcherModule(val service: AccessibilityService) {
         return findNodeByText(root, STREAMING_INDICATORS) != null
     }
 
-    // ── Code extraction ───────────────────────────────────────────────────────
+    // ── Unified extraction ────────────────────────────────────────────────────
 
     /**
-     * Extracts code blocks from Claude's response.
-     *
-     * Code blocks in Claude's UI are TextViews inside a HorizontalScrollView.
-     * We walk the tree looking for HorizontalScrollView nodes and grab their
-     * TextView children. Falls back to the largest TextView if none found.
+     * Extracts code according to [mode] and ensures ai-output.txt is ready on disk.
+     * Returns true on success, false if extraction failed (caller will retry).
      */
-    fun extractCodeBlocks(root: AccessibilityNodeInfo?): List<String> {
+    suspend fun extractAndWrite(
+        root: AccessibilityNodeInfo?,
+        mode: ExtractionMode,
+        termux: TermuxBridgeModule
+    ): Boolean = when (mode) {
+
+        ExtractionMode.CODE_BLOCK -> {
+            val blocks = extractCodeBlocks(root)
+            if (blocks.isEmpty()) {
+                Log.w(TAG, "CODE_BLOCK: no blocks found")
+                false
+            } else {
+                writeAiOutput(blocks.joinToString("\n\n// ===== next block =====\n\n"))
+                true
+            }
+        }
+
+        ExtractionMode.DOWNLOADED_FILE -> {
+            downloadViaTermux(termux)
+        }
+
+        ExtractionMode.PLAIN_TEXT -> {
+            val text = largestTextViewText(root)
+            if (text.isNullOrBlank()) {
+                Log.w(TAG, "PLAIN_TEXT: no text found")
+                false
+            } else {
+                writeAiOutput(text)
+                true
+            }
+        }
+    }
+
+    // ── CODE_BLOCK extraction ─────────────────────────────────────────────────
+
+    private fun extractCodeBlocks(root: AccessibilityNodeInfo?): List<String> {
         root ?: return emptyList()
         val blocks = mutableListOf<String>()
         collectCodeBlocks(root, blocks)
-
         if (blocks.isEmpty()) {
-            Log.w(TAG, "No HorizontalScrollView code blocks found, trying largest TextView fallback")
+            Log.w(TAG, "No HorizontalScrollView blocks found, trying largest TextView")
             largestTextViewText(root)?.takeIf { it.isNotBlank() }?.let { blocks.add(it) }
         }
-
         Log.d(TAG, "Extracted ${blocks.size} code block(s)")
         return blocks
     }
 
-    /**
-     * Walks the node tree looking for HorizontalScrollView nodes.
-     * Each one wraps a code block — the TextView child contains the code text.
-     */
     private fun collectCodeBlocks(node: AccessibilityNodeInfo, out: MutableList<String>) {
         if (node.className?.toString() == "android.widget.HorizontalScrollView") {
-            // Grab all TextView children — the code is directly inside
             for (i in 0 until node.childCount) {
                 val child = node.getChild(i) ?: continue
                 val text = child.text?.toString()
                 if (!text.isNullOrBlank()) {
                     out.add(text)
-                    Log.d(TAG, "Code block found (${text.length} chars): ${text.take(60)}…")
+                    Log.d(TAG, "Code block (${text.length} chars): ${text.take(60)}…")
                 }
             }
-            return // don't recurse into the scrollview children again
+            return
         }
         for (i in 0 until node.childCount) {
             collectCodeBlocks(node.getChild(i) ?: continue, out)
         }
     }
 
-    private fun largestTextViewText(root: AccessibilityNodeInfo): String? {
+    private fun largestTextViewText(root: AccessibilityNodeInfo?): String? {
         var best: String? = null
         fun traverse(n: AccessibilityNodeInfo?) {
             n ?: return
@@ -147,11 +238,130 @@ class UIWatcherModule(val service: AccessibilityService) {
         return best
     }
 
-    // ── Prompt field ──────────────────────────────────────────────────────────
+    // ── DOWNLOADED_FILE extraction ────────────────────────────────────────────
 
     /**
-     * Finds the EditText (hint: "Reply to Claude…") and sets its text.
+     * Full sequence for DOWNLOADED_FILE mode:
+     *   1. Termux snapshots /sdcard/Download/ (so it knows what was there before)
+     *   2. App taps every visible download button in Claude's UI
+     *   3. Termux assembles ai-output.txt from the new files
+     *   4. App waits for downloads_assembled.flag
      */
+    private suspend fun downloadViaTermux(termux: TermuxBridgeModule): Boolean {
+        // Step 1 — snapshot before tapping anything
+        ASSEMBLED_FLAG.delete()
+        termux.runScript("--snapshot")
+        delay(1_500L)   // give Termux a moment to write the snapshot
+
+        // Step 2 — tap all visible download buttons
+        val count = tapAllDownloadButtons()
+        if (count == 0) {
+            Log.w(TAG, "DOWNLOADED_FILE: no download buttons found in current window")
+            return false
+        }
+        Log.d(TAG, "Tapped $count download button(s)")
+
+        // Step 3 — tell Termux to assemble ai-output.txt
+        delay(2_000L)   // brief wait so downloads have a moment to start
+        termux.runScript("--assemble-downloads")
+
+        // Step 4 — poll for assembled flag
+        val deadline = System.currentTimeMillis() + ASSEMBLY_TIMEOUT_MS
+        while (System.currentTimeMillis() < deadline) {
+            delay(ASSEMBLY_POLL_MS)
+            if (ASSEMBLED_FLAG.exists()) {
+                Log.d(TAG, "downloads_assembled.flag detected — ai-output.txt ready")
+                return true
+            }
+        }
+
+        Log.w(TAG, "DOWNLOADED_FILE: assembly timed out after ${ASSEMBLY_TIMEOUT_MS / 1000}s")
+        return false
+    }
+
+    /**
+     * Walks the entire node tree and taps every download button found.
+     * Collects all matching nodes first, then taps them sequentially with
+     * a delay between each so Claude has time to process each download.
+     * Returns the number of buttons tapped.
+     */
+    private suspend fun tapAllDownloadButtons(): Int {
+        val root = service.rootInActiveWindow ?: return 0
+        val nodes = mutableListOf<AccessibilityNodeInfo>()
+        collectDownloadNodes(root, nodes)
+
+        if (nodes.isEmpty()) return 0
+
+        Log.d(TAG, "Found ${nodes.size} download node(s)")
+        var tapped = 0
+        for (node in nodes) {
+            val clickable = resolveClickable(node)
+            if (clickable != null) {
+                val ok = clickable.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                if (ok) {
+                    tapped++
+                    Log.d(TAG, "Tapped download button #$tapped")
+                    delay(POST_TAP_DELAY_MS)
+                }
+            }
+        }
+        return tapped
+    }
+
+    /**
+     * Recursively collects nodes that look like download buttons.
+     * Tries content-desc match against DOWNLOAD_BUTTON_DESCS.
+     * Also catches nodes whose content-desc ends with a known code extension
+     * (e.g. Claude sometimes uses the filename "MainActivity.kt" as the desc).
+     */
+    private fun collectDownloadNodes(
+        node: AccessibilityNodeInfo,
+        out: MutableList<AccessibilityNodeInfo>
+    ) {
+        val desc = node.contentDescription?.toString() ?: ""
+        val isDownloadByDesc = DOWNLOAD_BUTTON_DESCS.any { d ->
+            desc.equals(d, ignoreCase = true)
+        }
+        val isDownloadByExt = CODE_EXTENSIONS.any { ext ->
+            desc.endsWith(".$ext", ignoreCase = true)
+        }
+        if (isDownloadByDesc || isDownloadByExt) {
+            out.add(node)
+            return  // don't recurse into this node's children
+        }
+        for (i in 0 until node.childCount) {
+            collectDownloadNodes(node.getChild(i) ?: continue, out)
+        }
+    }
+
+    /**
+     * Given a node (which may be the icon/label rather than the hit-area),
+     * walks UP the tree to find the nearest clickable ancestor.
+     * Falls back to the node itself if it is clickable.
+     */
+    private fun resolveClickable(node: AccessibilityNodeInfo): AccessibilityNodeInfo? {
+        if (node.isClickable) return node
+        var current: AccessibilityNodeInfo? = node.parent
+        while (current != null) {
+            if (current.isClickable) return current
+            current = current.parent
+        }
+        return null
+    }
+
+    // ── ai-output.txt write ───────────────────────────────────────────────────
+
+    private fun writeAiOutput(content: String) {
+        val dir = File("/sdcard/ai-automation")
+        dir.mkdirs()
+        val tmp = File(dir, "ai-output.tmp")
+        tmp.writeText(content)
+        tmp.renameTo(File(dir, "ai-output.txt"))
+        Log.d(TAG, "ai-output.txt written (${content.length} chars)")
+    }
+
+    // ── Prompt field ──────────────────────────────────────────────────────────
+
     fun fillPromptField(text: String): Boolean {
         val root  = service.rootInActiveWindow ?: return false
         val input = findEditText(root) ?: run {
@@ -164,24 +374,16 @@ class UIWatcherModule(val service: AccessibilityService) {
         return input.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, args)
     }
 
-    // ── Tap helpers ───────────────────────────────────────────────────────────
+    // ── Error log file attachment ─────────────────────────────────────────────
 
-    /**
-     * Taps the "Add to chat" button (confirmed content-desc from uiautomator dump).
-     * The clickable node is the parent View wrapping the content-desc child.
-     */
     suspend fun tapAddFilesButton(): Boolean {
         val root = service.rootInActiveWindow ?: return false
-        // Find the inner view with content-desc="Add to chat", then click its clickable parent
         val node = findClickableParentByDesc(root, ADD_TO_CHAT_DESC) ?: run {
             Log.w(TAG, "Add to chat button not found")
             return false
         }
         return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            .also { success ->
-                Log.d(TAG, "tapAddFilesButton: $success")
-                if (success) delay(FILE_ATTACH_DELAY_MS)
-            }
+            .also { if (it) delay(FILE_ATTACH_DELAY_MS) }
     }
 
     suspend fun selectFileInPicker(fileName: String): Boolean {
@@ -206,52 +408,31 @@ class UIWatcherModule(val service: AccessibilityService) {
         delay(POST_TAP_DELAY_MS)
     }
 
-    /**
-     * Taps the "Send" button (confirmed content-desc from uiautomator dump).
-     * Only present when there is text in the input field.
-     */
     suspend fun tapSendButton(): Boolean {
         val root = service.rootInActiveWindow ?: return false
         val node = findClickableParentByDesc(root, SEND_DESC) ?: run {
-            Log.w(TAG, "Send button not found (may not be visible yet)")
+            Log.w(TAG, "Send button not found")
             return false
         }
         return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            .also { success ->
-                Log.d(TAG, "tapSendButton: $success")
-                if (success) delay(POST_TAP_DELAY_MS)
-            }
+            .also { if (it) delay(POST_TAP_DELAY_MS) }
     }
 
-    // ── Node search ───────────────────────────────────────────────────────────
+    // ── Node search helpers ───────────────────────────────────────────────────
 
-    /**
-     * Finds a node whose content-desc matches [desc], then walks UP the tree
-     * to find the nearest ancestor that is clickable=true.
-     * This matches Claude's pattern where the icon has the content-desc but
-     * the clickable hit-area is the parent View.
-     */
     private fun findClickableParentByDesc(
         root: AccessibilityNodeInfo,
         desc: String
     ): AccessibilityNodeInfo? {
         val target = findNodeByDesc(root, desc) ?: return null
-        // Walk up to find clickable ancestor
-        var current: AccessibilityNodeInfo? = target.parent
-        while (current != null) {
-            if (current.isClickable) return current
-            current = current.parent
-        }
-        // Fallback: return the target itself if nothing clickable found above
-        return if (target.isClickable) target else null
+        return resolveClickable(target)
     }
 
     private fun findNodeByDesc(
         root: AccessibilityNodeInfo,
         desc: String
     ): AccessibilityNodeInfo? {
-        val d = root.contentDescription?.toString() ?: ""
-        if (d.equals(desc, ignoreCase = true)) return root
+        if (root.contentDescription?.toString().equals(desc, ignoreCase = true)) return root
         for (i in 0 until root.childCount) {
             findNodeByDesc(root.getChild(i) ?: continue, desc)?.let { return it }
         }
@@ -278,3 +459,645 @@ class UIWatcherModule(val service: AccessibilityService) {
         return null
     }
 }
+
+
+//===== FILE: app/src/main/kotlin/com/jarvismini/devtools/autobuild/TermuxBridgeModule.kt =====
+package com.jarvismini.devtools.autobuild
+
+import android.content.Context
+import android.content.Intent
+import android.util.Log
+import com.jarvismini.devtools.autobuild.models.BuildResult
+import kotlinx.coroutines.delay
+import java.io.File
+
+/**
+ * Drives the GitHub Actions pipeline via Termux RUN_COMMAND broadcasts.
+ *
+ * Three script modes (all run build_runner.sh with different args):
+ *
+ *   (no args)              — normal build: copy ai-output.txt → git push → watch pipeline
+ *   --snapshot             — record files currently in /sdcard/Download/ before tapping
+ *   --assemble-downloads   — detect new files in /sdcard/Download/, assemble ai-output.txt
+ *                            in //===== FILE: filename ===== format, write assembled flag
+ *
+ * Requires:
+ *   - Termux from F-Droid (Play Store build lacks RUN_COMMAND permission)
+ *   - "Allow External Apps" enabled in Termux → Settings
+ *   - gh CLI authenticated: gh auth login
+ *   - git remote with push access configured in ~/jarvis/
+ */
+class TermuxBridgeModule(private val context: Context) {
+
+    companion object {
+        private const val TAG = "DevTools:TermuxBridge"
+
+        private const val TERMUX_PKG    = "com.termux"
+        private const val TERMUX_ACTION = "com.termux.RUN_COMMAND"
+        private const val TERMUX_BASH   = "/data/data/com.termux/files/usr/bin/bash"
+        private const val TERMUX_HOME   = "/data/data/com.termux/files/home"
+        private const val RUNNER_SCRIPT = "/sdcard/ai-automation/scripts/build_runner.sh"
+
+        const val POLL_INTERVAL_MS = 12_000L   // 12s between completion polls
+        const val BUILD_TIMEOUT_MS = 720_000L  // 12 min max
+
+        val COMPLETE_FLAG = File("/sdcard/ai-automation/build_complete.flag")
+    }
+
+    /**
+     * Fires build_runner.sh with the given arguments via Termux broadcast.
+     * Pass no args (empty) for the normal build push.
+     * Pass "--snapshot" or "--assemble-downloads" for download mode helpers.
+     */
+    fun runScript(vararg args: String) {
+        val scriptArgs = if (args.isEmpty()) {
+            arrayOf(RUNNER_SCRIPT)
+        } else {
+            arrayOf(RUNNER_SCRIPT, *args)
+        }
+
+        val intent = Intent(TERMUX_ACTION).apply {
+            setPackage(TERMUX_PKG)
+            putExtra("com.termux.RUN_COMMAND_PATH",       TERMUX_BASH)
+            putExtra("com.termux.RUN_COMMAND_ARGUMENTS",  scriptArgs)
+            putExtra("com.termux.RUN_COMMAND_WORKDIR",    TERMUX_HOME)
+            putExtra("com.termux.RUN_COMMAND_BACKGROUND", true)
+        }
+        runCatching { context.sendBroadcast(intent) }
+            .onSuccess { Log.d(TAG, "Termux broadcast sent: build_runner.sh ${args.joinToString(" ")}") }
+            .onFailure { Log.e(TAG, "Termux broadcast failed", it) }
+    }
+
+    /**
+     * Normal build trigger: clears flags, fires build_runner.sh with no args.
+     */
+    fun triggerBuild() {
+        COMPLETE_FLAG.delete()
+        FileManagerModule().clearBuildFlags()
+        runScript()  // no args = normal push mode
+    }
+
+    /**
+     * Polls every POLL_INTERVAL_MS for build_complete.flag.
+     * build_runner.sh writes this after git pull completes (success or failure).
+     */
+    suspend fun pollForCompletion(timeoutMs: Long = BUILD_TIMEOUT_MS): BuildResult {
+        val deadline = System.currentTimeMillis() + timeoutMs
+        val fm = FileManagerModule()
+
+        while (System.currentTimeMillis() < deadline) {
+            delay(POLL_INTERVAL_MS)
+            if (COMPLETE_FLAG.exists()) {
+                Log.d(TAG, "build_complete.flag detected")
+                return if (fm.buildFailed()) {
+                    Log.d(TAG, "error_summary.txt present → FAILURE")
+                    BuildResult.FAILURE
+                } else {
+                    Log.d(TAG, "No error_summary.txt → SUCCESS")
+                    BuildResult.SUCCESS
+                }
+            }
+            val remaining = (deadline - System.currentTimeMillis()) / 1000
+            Log.d(TAG, "Waiting for build… ${remaining}s remaining")
+        }
+
+        Log.w(TAG, "Build poll timed out after ${timeoutMs / 1000}s")
+        return BuildResult.TIMEOUT
+    }
+}
+
+
+//===== FILE: app/src/main/kotlin/com/jarvismini/devtools/autobuild/OrchestrationController.kt =====
+package com.jarvismini.devtools.autobuild
+
+import android.content.Context
+import android.util.Log
+import com.jarvismini.devtools.autobuild.models.AutoBuildState
+import com.jarvismini.devtools.autobuild.models.BuildResult
+import com.jarvismini.devtools.autobuild.models.ErrorLogBundle
+import com.jarvismini.devtools.autobuild.models.ExtractionMode
+import com.jarvismini.devtools.autobuild.models.LoopState
+import kotlinx.coroutines.delay
+
+/**
+ * State machine + main loop.
+ *
+ * EXTRACTING_CODE delegates to UIWatcherModule.extractAndWrite() which handles
+ * all three modes. In every case the result is ai-output.txt on disk before
+ * TRIGGERING_BUILD fires.
+ */
+class OrchestrationController(
+    private val context: Context,
+    private val uiWatcher: UIWatcherModule
+) {
+    companion object {
+        private const val TAG = "DevTools:Orchestrator"
+
+        const val LOOP_MAX_ITERATIONS   = 50
+        const val MAX_RETRIES_PER_STATE = 3
+        const val BETWEEN_ITER_DELAY_MS = 500L
+
+        const val STALE_ERROR_PROMPT =
+            "The build is still failing with the same errors as the previous attempt. " +
+            "Please try a different approach or check for structural issues."
+
+        const val FRESH_ERROR_PROMPT =
+            "The build failed. The error logs are attached below. " +
+            "Please analyze the errors and provide corrected code."
+    }
+
+    private val fm       = FileManagerModule()
+    private val termux   = TermuxBridgeModule(context)
+    private val notifier = BuildNotifier(context)
+
+    private var retryCount  = 0
+    private var errorBundle: ErrorLogBundle? = null
+
+    @Volatile private var stopRequested = false
+
+    fun requestStop() { stopRequested = true }
+
+    suspend fun runLoop() {
+        val checkpoint = fm.loadState()
+        var state      = checkpoint?.state     ?: AutoBuildState.WAITING_FOR_RESPONSE
+        var iteration  = checkpoint?.iteration ?: 0
+        stopRequested  = false
+
+        // Read mode once per loop start — persisted via ModeStore / spinner in MainActivity
+        val mode = ModeStore.load(context)
+        log("Loop started — state=$state iter=$iteration mode=$mode")
+        notifier.update(iteration, state)
+
+        while (iteration < LOOP_MAX_ITERATIONS && !stopRequested) {
+            fm.saveState(LoopState(state, iteration))
+
+            state = when (state) {
+
+                AutoBuildState.IDLE ->
+                    AutoBuildState.WAITING_FOR_RESPONSE
+
+                AutoBuildState.WAITING_FOR_RESPONSE -> {
+                    val done = uiWatcher.waitForResponseComplete()
+                    if (done) AutoBuildState.EXTRACTING_CODE
+                    else      timeout(state)
+                }
+
+                AutoBuildState.EXTRACTING_CODE -> {
+                    val root = uiWatcher.service.rootInActiveWindow
+                    // extractAndWrite handles all three modes internally.
+                    // For DOWNLOADED_FILE it also coordinates the Termux snapshot
+                    // and assemble steps before returning.
+                    val ok = uiWatcher.extractAndWrite(root, mode, termux)
+                    if (ok) {
+                        log("Extraction OK (mode=$mode) — ai-output.txt ready")
+                        AutoBuildState.TRIGGERING_BUILD
+                    } else {
+                        retry(state)
+                    }
+                }
+
+                AutoBuildState.WRITING_OUTPUT ->
+                    AutoBuildState.TRIGGERING_BUILD
+
+                AutoBuildState.TRIGGERING_BUILD -> {
+                    log("Triggering build (iteration=$iteration) via Termux…")
+                    termux.triggerBuild()
+                    retryCount = 0
+                    AutoBuildState.WAITING_FOR_BUILD
+                }
+
+                AutoBuildState.WAITING_FOR_BUILD -> {
+                    log("Polling for Apk.yml completion…")
+                    when (termux.pollForCompletion()) {
+                        BuildResult.SUCCESS -> AutoBuildState.BUILD_SUCCEEDED
+                        BuildResult.FAILURE -> AutoBuildState.CHECKING_ERROR_FRESHNESS
+                        BuildResult.TIMEOUT -> timeout(state)
+                    }
+                }
+
+                AutoBuildState.BUILD_SUCCEEDED -> {
+                    log("✅ Build succeeded after $iteration iteration(s)")
+                    notifier.success(iteration)
+                    return
+                }
+
+                AutoBuildState.CHECKING_ERROR_FRESHNESS -> {
+                    if (fm.hasNewErrors(iteration)) {
+                        log("New error logs detected — reading logs")
+                        AutoBuildState.READING_ERROR_LOGS
+                    } else {
+                        log("Error logs unchanged — sending nudge prompt")
+                        uiWatcher.fillPromptField(STALE_ERROR_PROMPT)
+                        iteration++
+                        AutoBuildState.SUBMITTING_PROMPT
+                    }
+                }
+
+                AutoBuildState.READING_ERROR_LOGS -> {
+                    val bundle = fm.readErrorLogs()
+                    if (bundle != null) {
+                        fm.saveErrorFingerprint(fm.computeErrorFingerprint(iteration))
+                        errorBundle = bundle
+                        log("Error logs read (${bundle.errorSummaryContent.length} chars)")
+                        AutoBuildState.ATTACHING_FILES
+                    } else {
+                        log("Error logs missing after FAILURE — retrying", isError = true)
+                        timeout(state)
+                    }
+                }
+
+                AutoBuildState.ATTACHING_FILES -> {
+                    val ok = attachErrorFiles()
+                    if (ok) { iteration++; AutoBuildState.SUBMITTING_PROMPT }
+                    else    retry(state)
+                }
+
+                AutoBuildState.SUBMITTING_PROMPT -> {
+                    uiWatcher.tapSendButton()
+                    delay(UIWatcherModule.POST_TAP_DELAY_MS)
+                    AutoBuildState.WAITING_FOR_RESPONSE
+                }
+
+                AutoBuildState.TIMEOUT_ERROR -> {
+                    val backoff = 1_000L * (1 shl minOf(retryCount, 3))
+                    log("Timeout recovery — waiting ${backoff}ms (retry=$retryCount)", isError = true)
+                    delay(backoff)
+                    if (++retryCount > MAX_RETRIES_PER_STATE) {
+                        notifier.error("Too many retries — stopped at $state")
+                        return
+                    }
+                    AutoBuildState.WAITING_FOR_RESPONSE
+                }
+            }
+
+            AutoBuildService.currentState     = state
+            AutoBuildService.currentIteration = iteration
+            notifier.update(iteration, state)
+            AutoBuildService.onStatusUpdate?.invoke(iteration, state)
+            delay(BETWEEN_ITER_DELAY_MS)
+        }
+
+        if (stopRequested) log("Loop stopped by user request")
+        else log("Max iterations ($LOOP_MAX_ITERATIONS) reached — stopping", isError = true)
+        notifier.error(if (stopRequested) "Stopped by user" else "Max iterations reached")
+    }
+
+    private suspend fun attachErrorFiles(): Boolean {
+        if (!uiWatcher.tapAddFilesButton()) {
+            log("tapAddFilesButton failed (1)", isError = true); return false
+        }
+        if (!uiWatcher.selectFileInPicker(FileManagerModule.ERROR_FILES_FILE.name)) {
+            log("selectFileInPicker(error_files.txt) failed", isError = true); return false
+        }
+        delay(UIWatcherModule.POST_TAP_DELAY_MS)
+
+        if (!uiWatcher.tapAddFilesButton()) {
+            log("tapAddFilesButton failed (2)", isError = true); return false
+        }
+        if (!uiWatcher.selectFileInPicker(FileManagerModule.ERROR_SUMMARY_FILE.name)) {
+            log("selectFileInPicker(error_summary.txt) failed", isError = true); return false
+        }
+        delay(UIWatcherModule.POST_TAP_DELAY_MS)
+
+        uiWatcher.fillPromptField(FRESH_ERROR_PROMPT)
+        log("Both error files attached, prompt filled")
+        return true
+    }
+
+    private fun timeout(state: AutoBuildState): AutoBuildState {
+        log("Timeout in $state", isError = true)
+        return AutoBuildState.TIMEOUT_ERROR
+    }
+
+    private fun retry(state: AutoBuildState): AutoBuildState {
+        return if (++retryCount <= MAX_RETRIES_PER_STATE) {
+            log("Retrying $state (attempt $retryCount)")
+            state
+        } else {
+            log("Max retries exceeded for $state", isError = true)
+            AutoBuildState.TIMEOUT_ERROR
+        }
+    }
+
+    private fun log(msg: String, isError: Boolean = false) {
+        if (isError) Log.e(TAG, msg) else Log.d(TAG, msg)
+        AutoBuildService.onLogLine?.invoke(msg, isError)
+    }
+}
+
+
+//===== FILE: app/src/main/kotlin/com/jarvismini/devtools/MainActivity.kt =====
+package com.jarvismini.devtools
+
+import android.content.Intent
+import android.graphics.Color
+import android.os.Bundle
+import android.provider.Settings
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import androidx.appcompat.app.AppCompatActivity
+import com.jarvismini.devtools.autobuild.AutoBuildService
+import com.jarvismini.devtools.autobuild.ModeStore
+import com.jarvismini.devtools.autobuild.models.AutoBuildState
+import com.jarvismini.devtools.autobuild.models.ExtractionMode
+import com.jarvismini.devtools.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private val logBuilder = SpannableStringBuilder()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setupModeSpinner()
+        setupButtons()
+        registerCallbacks()
+        refreshServiceState()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        refreshServiceState()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        AutoBuildService.onStatusUpdate = null
+        AutoBuildService.onLogLine = null
+    }
+
+    // ── Mode spinner ──────────────────────────────────────────────────────────
+
+    private fun setupModeSpinner() {
+        val labels = listOf(
+            "Code block in chat",
+            "Downloaded file(s) → /sdcard",
+            "Plain text in chat"
+        )
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels).also {
+            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        }
+        binding.spinnerMode.adapter = adapter
+        binding.spinnerMode.setSelection(ModeStore.load(this).ordinal)
+
+        binding.spinnerMode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
+                val mode = ExtractionMode.entries[pos]
+                ModeStore.save(this@MainActivity, mode)
+                appendLog("Mode: ${mode.name}", Color.CYAN)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
+    }
+
+    // ── Buttons ───────────────────────────────────────────────────────────────
+
+    private fun setupButtons() {
+        binding.btnStart.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        }
+        binding.btnStop.setOnClickListener {
+            AutoBuildService.requestStop()
+            appendLog("Stop requested by user.", Color.YELLOW)
+            binding.btnStop.isEnabled = false
+        }
+        binding.btnAccessibility.setOnClickListener {
+            startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        }
+    }
+
+    // ── Service callbacks ─────────────────────────────────────────────────────
+
+    private fun registerCallbacks() {
+        AutoBuildService.onStatusUpdate = { iteration, state ->
+            runOnUiThread { updateStatus(iteration, state) }
+        }
+        AutoBuildService.onLogLine = { line, isError ->
+            runOnUiThread { appendLog(line, if (isError) Color.RED else Color.WHITE) }
+        }
+    }
+
+    // ── UI helpers ────────────────────────────────────────────────────────────
+
+    private fun refreshServiceState() {
+        val enabled = isAccessibilityServiceEnabled()
+        if (enabled) {
+            binding.tvAccessibilityHint.visibility = View.GONE
+            binding.btnStart.isEnabled = false
+            binding.btnStop.isEnabled = true
+            if (AutoBuildService.isLoopRunning) {
+                updateStatus(AutoBuildService.currentIteration, AutoBuildService.currentState)
+            }
+        } else {
+            binding.tvAccessibilityHint.visibility = View.VISIBLE
+            binding.btnStart.isEnabled = true
+            binding.btnStop.isEnabled = false
+            setStatusDot(Color.GRAY)
+            binding.tvStatus.text = getString(R.string.status_idle)
+        }
+    }
+
+    private fun updateStatus(iteration: Int, state: AutoBuildState) {
+        binding.tvIteration.text = "Iter: $iteration"
+        binding.tvStatus.text = state.displayName()
+        setStatusDot(state.dotColor())
+    }
+
+    private fun setStatusDot(color: Int) {
+        binding.statusDot.backgroundTintList =
+            android.content.res.ColorStateList.valueOf(color)
+    }
+
+    private fun appendLog(line: String, color: Int) {
+        val start = logBuilder.length
+        logBuilder.append(line).append("\n")
+        logBuilder.setSpan(
+            ForegroundColorSpan(color), start, logBuilder.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        binding.tvLog.text = logBuilder
+        binding.scrollLog.post { binding.scrollLog.fullScroll(View.FOCUS_DOWN) }
+    }
+
+    private fun isAccessibilityServiceEnabled(): Boolean {
+        val enabledServices = Settings.Secure.getString(
+            contentResolver, Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+        ) ?: return false
+        val short = "${packageName}/.autobuild.AutoBuildService"
+        val full  = "${packageName}/com.jarvismini.devtools.autobuild.AutoBuildService"
+        return enabledServices.split(":").any { entry ->
+            val t = entry.trim()
+            t.equals(short, ignoreCase = true) || t.equals(full, ignoreCase = true)
+        }
+    }
+
+    private fun AutoBuildState.displayName() = when (this) {
+        AutoBuildState.IDLE                     -> "Idle"
+        AutoBuildState.WAITING_FOR_RESPONSE     -> "Waiting for Claude response…"
+        AutoBuildState.EXTRACTING_CODE          -> "Extracting code…"
+        AutoBuildState.WRITING_OUTPUT           -> "Writing ai-output.txt…"
+        AutoBuildState.TRIGGERING_BUILD         -> "Pushing to GitHub via Termux…"
+        AutoBuildState.WAITING_FOR_BUILD        -> "Waiting for Apk.yml to finish…"
+        AutoBuildState.CHECKING_ERROR_FRESHNESS -> "Checking if errors are new…"
+        AutoBuildState.READING_ERROR_LOGS       -> "Pulling error logs…"
+        AutoBuildState.ATTACHING_FILES          -> "Attaching error logs to Claude…"
+        AutoBuildState.SUBMITTING_PROMPT        -> "Submitting prompt to Claude…"
+        AutoBuildState.BUILD_SUCCEEDED          -> "✅ Build succeeded!"
+        AutoBuildState.TIMEOUT_ERROR            -> "⚠ Timeout — retrying…"
+    }
+
+    private fun AutoBuildState.dotColor() = when (this) {
+        AutoBuildState.BUILD_SUCCEEDED          -> Color.GREEN
+        AutoBuildState.TIMEOUT_ERROR            -> Color.RED
+        AutoBuildState.IDLE                     -> Color.GRAY
+        AutoBuildState.WAITING_FOR_BUILD,
+        AutoBuildState.TRIGGERING_BUILD         -> Color.YELLOW
+        else                                    -> Color.CYAN
+    }
+}
+
+
+//===== FILE: app/src/main/res/layout/activity_main.xml =====
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?android:attr/colorBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AutoBuild Loop"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnBackground"
+        android:paddingBottom="8dp" />
+
+    <!-- Accessibility service hint -->
+    <TextView
+        android:id="@+id/tvAccessibilityHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚠ AutoBuild Service not enabled"
+        android:textSize="13sp"
+        android:textColor="@color/red_error"
+        android:paddingBottom="8dp"
+        android:visibility="gone" />
+
+    <!-- Extraction mode label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Claude output mode:"
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnBackground"
+        android:paddingBottom="2dp" />
+
+    <!-- Mode spinner -->
+    <Spinner
+        android:id="@+id/spinnerMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp" />
+
+    <!-- Status row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <View
+            android:id="@+id/statusDot"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:background="@drawable/circle_dot"
+            android:backgroundTint="@color/grey_idle" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/status_idle"
+            android:textSize="14sp"
+            android:textColor="?attr/colorOnBackground"
+            android:paddingStart="10dp" />
+
+        <TextView
+            android:id="@+id/tvIteration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iter: 0"
+            android:textSize="13sp"
+            android:textColor="?attr/colorOnBackground" />
+
+    </LinearLayout>
+
+    <!-- Scrollable log -->
+    <ScrollView
+        android:id="@+id/scrollLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1A000000"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="11sp"
+            android:textColor="?attr/colorOnBackground"
+            android:lineSpacingMultiplier="1.3" />
+
+    </ScrollView>
+
+    <!-- Start / Stop -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btn_start" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="@string/btn_stop"
+            android:enabled="false" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAccessibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/open_accessibility"
+        style="@style/Widget.Material3.Button.OutlinedButton" />
+
+</LinearLayout>
