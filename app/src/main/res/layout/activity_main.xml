@@ -7,7 +7,6 @@
     android:padding="24dp"
     android:background="?android:attr/colorBackground">
 
-    <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,10 +24,26 @@
         android:text="⚠ AutoBuild Service not enabled"
         android:textSize="13sp"
         android:textColor="@color/red_error"
-        android:paddingBottom="16dp"
+        android:paddingBottom="8dp"
         android:visibility="gone" />
 
-    <!-- Status dot + label -->
+    <!-- Extraction mode label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Claude output mode:"
+        android:textSize="12sp"
+        android:textColor="?attr/colorOnBackground"
+        android:paddingBottom="2dp" />
+
+    <!-- Mode spinner -->
+    <Spinner
+        android:id="@+id/spinnerMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dp" />
+
+    <!-- Status row -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +68,6 @@
             android:textColor="?attr/colorOnBackground"
             android:paddingStart="10dp" />
 
-        <!-- Iteration counter -->
         <TextView
             android:id="@+id/tvIteration"
             android:layout_width="wrap_content"
@@ -64,7 +78,7 @@
 
     </LinearLayout>
 
-    <!-- Scrollable log area -->
+    <!-- Scrollable log -->
     <ScrollView
         android:id="@+id/scrollLog"
         android:layout_width="match_parent"
@@ -84,7 +98,7 @@
 
     </ScrollView>
 
-    <!-- Buttons row -->
+    <!-- Start / Stop -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -111,7 +125,6 @@
 
     </LinearLayout>
 
-    <!-- Open Accessibility Settings shortcut -->
     <Button
         android:id="@+id/btnAccessibility"
         android:layout_width="match_parent"
